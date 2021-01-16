@@ -135,7 +135,7 @@ NB. AIN1 comes after AIN2 on the TB6612
 The motion in the original really useful tutorial is triggered by reading the `/proc/asound/card0/pcm0p/sub0/status` status.
 Namely if there is a sound playing it moves. Which is not great.
 
-The functionality is better served with the [API I wrote](API.md), i.e. adding a service which runs in Python
+The functionality is better served with the [Python API](API.md), i.e. adding a service which runs in Python
 
     from pyfurby import Furby
     furby = Furby()
@@ -152,10 +152,6 @@ So one would need to have an intensity based cutoff to make it jerky.
 However, there is no space to add custom circuitry like bandpass filters etc.
 The very minimum would be a GPIO13 -> resistor -> PNP transistor base -> TB6612 and that is already too much.
 
-## API
-
-
-
 ## USB Microphone
 
 * list mikes: `arecord -l`
@@ -163,6 +159,17 @@ The very minimum would be a GPIO13 -> resistor -> PNP transistor base -> TB6612 
 
 This had all sorts of issues. Even when plugged into the Pi via a shim it was temperamental,
 while was perfect on my laptop.
+
+I2S microphone installation as per Adafruit's instruction requires a quick shoddy hack:
+
+    sudo ln -s /lib/modules/5.4.83+ /lib/modules/5.4.72+
+    
+With this the installation works fine.
+    
+    cd ~
+    sudo pip3 install --upgrade adafruit-python-shell
+    wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/i2smic.py
+    sudo python3 i2smic.py
 
 ## Alexa
 
