@@ -25,4 +25,4 @@ As a result it is not a Furbexa, but a pyfurby. What do you reckon Furby?
     furby = Furby()
     furby.say('I rather have my fur back on, you creep!')
 
-In fact, I am going to find someone who can sew to make him a lab coat so he can give instructions at open days.
+In fact, I am going to find someone who can sew to make it a lab coat so it can give instructions at open days.
