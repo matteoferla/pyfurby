@@ -12,19 +12,19 @@ class FurbyTalk:
         self.engine.runAndWait()
 
     def _get_volume(self):
-        return self.engine.engine.getProperty('volume')
+        return self.engine.getProperty('volume')
 
     def _set_volume(self, volume: float):
         assert 1. >= volume >= 0.
-        self.engine.engine.setProperty('volume', volume)
+        self.engine.setProperty('volume', volume)
 
     volume = property(_get_volume, _set_volume)
 
     def _get_rate(self):
-        return self.engine.engine.getProperty('rate')
+        return self.engine.getProperty('rate')
 
     def _set_rate(self, rate: float):
-        self.engine.engine.setProperty('rate', rate)
+        self.engine.setProperty('rate', rate)
 
     rate = property(_get_rate, _set_rate)
 
