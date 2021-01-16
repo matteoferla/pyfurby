@@ -8,7 +8,7 @@ The idea and the majority of the setup came form [a blog post](https://howchoo.c
 However, there were lots of problems and differences.
 Namely
 
-* the code here is IMO cleaner, along with extra functionality
+* the code here is different
 * the components are squeezed in differently
 * gyroscope
 
@@ -18,5 +18,11 @@ This project can be divided into:
 * [software](software.md)
 
 On the software side, I was disappointed that Alexa not on an Echo cannot play music.
-However, making it server a jupyter notebook and having a nice API (pyfurby) mean that it's rather fun.
+However, making it serve a jupyter notebook and having a nice API (`pyfurby`) mean that it's rather fun.
+As a result it is not a Furbexa, but a pyfurby. What do you reckon Furby?
+
+    from pyfurby import Furby
+    furby = Furby()
+    furby.say('I rather have my fur back on, you creep!')
+
 In fact, I am going to find someone who can sew to make him a lab coat so he can give instructions at open days.

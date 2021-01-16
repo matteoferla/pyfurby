@@ -1,6 +1,6 @@
 ## Standard stuff
 ### SSH and update
-Did the usual as discussed in [setting up](../setting_up.md).
+Did the usual as discussed in [setting up in the Smart home repo](https://github.com/matteoferla/Somewhat-Smart-Home/blob/main/setting_up.md).
 
 * Flashed a microSD with Raspian
 * Added `ssh` file to boot drive before ejecting it from computer.
