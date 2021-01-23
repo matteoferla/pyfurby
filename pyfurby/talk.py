@@ -8,10 +8,25 @@ class FurbyTalk:
         self.engine.setProperty('rate', voice_rate)
 
     def say(self, text):
+        """
+        convert the ``text`` to speech and play it.
+
+        * To say in a different language change ``voice_name``
+        * To say in a different volume change ``voice_volume`` (0-1)
+        * To say in a different rate change ``voice_rate` (200 is default).
+
+        This gets overwitten.
+
+        :param text: text to say
+        :return:
+        """
         self.engine.say(text)
         self.engine.runAndWait()
 
     def _get_volume(self):
+        """
+        :return: volume of speech
+        """
         return self.engine.getProperty('volume')
 
     def _set_volume(self, volume: float):
@@ -21,6 +36,9 @@ class FurbyTalk:
     volume = property(_get_volume, _set_volume)
 
     def _get_rate(self):
+        """
+        :return: rate of speech
+        """
         return self.engine.getProperty('rate')
 
     def _set_rate(self, rate: float):

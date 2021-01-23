@@ -160,6 +160,8 @@ The very minimum would be a GPIO13 -> resistor -> PNP transistor base -> TB6612 
 This had all sorts of issues. Even when plugged into the Pi via a shim it was temperamental,
 while was perfect on my laptop.
 
+## I2S microphone
+
 I2S microphone installation as per Adafruit's instruction requires a quick shoddy hack:
 
     sudo ln -s /lib/modules/5.4.83+ /lib/modules/5.4.72+
@@ -170,6 +172,15 @@ With this the installation works fine.
     sudo pip3 install --upgrade adafruit-python-shell
     wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/i2smic.py
     sudo python3 i2smic.py
+    arecord -D plughw:0 -c1 -r 48000 -f S32_LE -t wav -V mono -v file.wav
+
+So the microphone works but the PWA does not. I am using GPIO13 so it should not matter.
+
+    lsmod | grep pwm
+    pwm_bcm2835            16384  1
+    
+PWM_1 is GPIO13 so that is correct, but `aplay -l` cannot see it. So it's an also problem.
+
 
 ## Alexa
 

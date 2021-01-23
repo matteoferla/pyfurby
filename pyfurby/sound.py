@@ -4,6 +4,9 @@ class FurbySound:
 
     @property
     def playing(self):
+        """
+        :return: Is the sound card in use?
+        """
         with open(self.soundcard_status_file, 'r') as fh:
             value = fh.read()
         if value == 'RUNNING':

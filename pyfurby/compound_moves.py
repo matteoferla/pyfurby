@@ -1,7 +1,7 @@
 import board, digitalio, time, random
 from typing import Optional
 
-class FurbyTests:
+class FurbyCompound:
     """
     These are silly moves. Compound moves.
     """
