@@ -1,7 +1,8 @@
 import pyttsx3
 
+
 class FurbyTalk:
-    def __init__(self, voice_name:str='en-scottish+m4', voice_volume:int=0.7, voice_rate:int=200):
+    def __init__(self, voice_name: str, voice_volume: int, voice_rate: int):
         self.engine = pyttsx3.init('espeak', debug=True)
         self.volume = voice_volume
         self.engine.setProperty('voice', voice_name)
@@ -45,4 +46,3 @@ class FurbyTalk:
         self.engine.setProperty('rate', rate)
 
     rate = property(_get_rate, _set_rate)
-

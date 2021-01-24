@@ -61,6 +61,8 @@ In mine it's not that bad and actually better than two 8Ω 1W speakers in loudne
 It still needs an Amp, using a PAM8302A audio amp wiring V<sub>CC</sub> to 5V (tinny, but loud).
 That is with `alsamixer` set to max and the variable resistor left as is.
 
+I am pretty sure I did not have to `sudo apt-get install alsa-utils`, but it's already the newest version.
+
 Audio-in with a 10 nF ceramic cap (manually determined) to gnd can stop the tinniness, but lowers volume.
 
 The best explanation of the PWM audio I found is [this post](https://librpip.frasersdev.net/peripheral-config/pwm0and1/).

@@ -9,7 +9,7 @@ class FurbyMotor:
     """
     high_speed = 0xffff
 
-    def __init__(self, pwma: int = 7, stby: int = 13, ain1: int = 16, ain2: int = 11, cycle: int = 12):
+    def __init__(self, pwma: int, stby: int, ain1: int, ain2: int, cycle: int):
         # standby: H-bridges to work when high
         self.standby_pin = digitalio.DigitalInOut(digitalio.Pin(stby))  #: standy pin for TB6612
         self.standby_pin.switch_to_output(False)

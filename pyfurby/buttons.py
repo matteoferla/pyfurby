@@ -6,7 +6,7 @@ class FurbyButtons:
     There are a few buttons. All configured as pull-ups
     """
 
-    def __init__(self, red: int = 14, green: int = 24, mouth: int = 18, chest: int = 26, back: int = 16):
+    def __init__(self, red: int, green: int, mouth: int, chest: int, back: int):
         # LEDs
         self.red_pin = digitalio.DigitalInOut(digitalio.Pin(red))  #: red pin LED
         self.green_pin = digitalio.DigitalInOut(digitalio.Pin(green)) #: green pin LED
@@ -20,7 +20,7 @@ class FurbyButtons:
             button_pin.switch_to_input(pull=digitalio.Pull.UP)
 
     @property
-    def bitten(self):
+    def bitten(self) -> bool:
         """
         True when self.mouth_pin.value is not 1
 
@@ -29,7 +29,7 @@ class FurbyButtons:
         return not self.mouth_pin.value
 
     @property
-    def fore_squeezed(self):
+    def fore_squeezed(self) -> bool:
         """
         True when self.chest_pin.value is not 1
 
@@ -38,7 +38,7 @@ class FurbyButtons:
         return not self.chest_pin.value
 
     @property
-    def aft_squeezed(self):
+    def aft_squeezed(self) -> bool:
         """
         True when self.back_pin.value is not 1
 
@@ -47,7 +47,7 @@ class FurbyButtons:
         return not self.back_pin.value
 
     @property
-    def squeezed(self):
+    def squeezed(self) -> bool:
         """
         True when self.chest_pin.value or self.back_pin.value is not 1
 
