@@ -44,10 +44,13 @@ Did the usual as discussed in [setting up in the Smart home repo](https://github
 
     sudo raspi-config 
 
-## Speaker
+## Speaker by PWM
 
-> Amazon no longer allows AlexaPi & co. to pay music. 
-> And there's a fur coat in between and a motor to compete with so sound quality is not a must.
+NB. Amazon no longer allows AlexaPi & co. to pay music. 
+And there's a fur coat in between and a motor to compete with so sound quality is not a must.
+
+> PWM audio seems incompatible with a I2S microphone, so I decided it would simpler to make both speaker and mike I2S controlled.
+> Turns out this is equally problematic.
 
 * 5V
 * GPIO13 (mono)
