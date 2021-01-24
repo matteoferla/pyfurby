@@ -5,7 +5,7 @@ import pydoc
 
 class RestlessFurby:
 
-    def _resolve_cmd(self, cmd):
+    def _resolve_request(self, cmd):
         """
         Restful API Mode.
         This action is trigged when any route that is not home is requested
@@ -20,6 +20,7 @@ class RestlessFurby:
         except Exception as error:
             return {'status': 'error',
                     'error': f'{error.__class__.__name__}: {error}'}
+
 
     def _home(self):
         """
