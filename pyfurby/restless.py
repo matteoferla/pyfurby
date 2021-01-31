@@ -45,6 +45,6 @@ class RestlessFurby:
         :return:
         """
         app = Flask(__name__)
-        app.add_url_rule('/<cmd>', 'command', self._resolve_cmd)
+        app.add_url_rule('/<cmd>', 'command', self._resolve_request)
         app.add_url_rule('/', 'home', self._home)
         app.run(port=1998, host='*')
