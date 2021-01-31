@@ -110,6 +110,8 @@ That is my laptop sends a web request to all of them and they obey.
     furby.say(text='hello world')
     furby.help() # return the list of commands
 
+### Security
 
+The Jupyter notebook does require a password. However, not in Restless API mode.
 
     

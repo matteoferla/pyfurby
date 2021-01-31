@@ -9,6 +9,23 @@ The victim, looking scared...
 
 See [API notes](API.md)
 
+The objective is to make the furby easy to control and customise. Say
+    
+    from pyfurby import Furby
+    furby = Furby()
+    furby.wait_until_squeezed()
+    furby.say('Get your filthy hands off me')
+    furby.wait_until_moved()
+    furby.say('Put me down you degenerate')
+    
+It contains several methods, ranging from the comical
+    
+    furby.flutter() # it flutters its eyelids
+    
+to the useful 
+   
+    furby.recite_ip()
+
 ## Background
 
 The idea and the majority of the setup came form [a blog post](https://howchoo.com/g/otewzwmwnzb/amazon-echo-furby-using-raspberry-pi-furlexa)
