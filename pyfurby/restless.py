@@ -3,7 +3,7 @@ from typing import get_type_hints
 import pydoc
 
 
-class RestlessFurby:
+class RestlessFurby: # restful...
 
     def _resolve_request(self, cmd):
         """
@@ -35,7 +35,7 @@ class RestlessFurby:
                   'key=value separated by an ampersand (that is a URL query).\n' +\
                   'Using Pythod requests, just submit it as a dictionary\n'
         for k in [k for k in dir(self) if k.find('_') != 0]:
-            attribute = pydoc.getdoc(getattr(self, k))
+            attribute = getattr(self, k)
             reply += f'###{k}\n>{get_type_hints(attribute)}\n{pydoc.getdoc(attribute)}\n\n'
         return reply
 
