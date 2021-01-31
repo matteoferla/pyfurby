@@ -15,6 +15,7 @@ class RestlessFurby:
         """
         try:
             kwargs = request.args
+            print(f'Request {cmd}: {kwargs}')
             getattr(self, cmd)(**kwargs)
             return {'status': 'OK'}
         except Exception as error:
