@@ -2,7 +2,7 @@
 
 The victim, looking scared...
 
-![fear](images/fear.JPG)
+[[!fear](images/fear.thumbnail.jpg)<br/>(click to enlarge)](images/fear.JPG)
 
 The idea and the majority of the setup came form [a blog post](https://howchoo.com/g/otewzwmwnzb/amazon-echo-furby-using-raspberry-pi-furlexa)
 However, there were lots of problems and differences.

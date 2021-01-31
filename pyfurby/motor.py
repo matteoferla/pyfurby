@@ -54,6 +54,14 @@ class FurbyMotor:
         self.ain1_pin.value = False
         self.ain2_pin.value = False
 
+    def inverse(self):
+        if self.ain1_pin.value:
+            self.move_counterclockwise()
+        elif self.ain2_pin.value:
+            self.move_clockwise()
+        else: # halted
+            pass
+
     def set_percent_speed(self, speed: int):
         """
         Will convert to high_speed hex (``0xffff``)
@@ -81,3 +89,4 @@ class FurbyMotor:
             self.set_percent_speed(speed)
         self.move_counterclockwise()
         self.wait_until_revolution()
+        self.halt()

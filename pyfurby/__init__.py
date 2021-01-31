@@ -27,9 +27,9 @@ class Furby(FurbyMotor, FurbyButtons, FurbyTalk, FurbySound, FurbyCompound, Furb
                  cycle: int = 12,  # revolution button (pull-up input)
                  red: int = 14,  # red LED (output)
                  green: int = 24,  # green LED (output)
-                 mouth: int = 7,  # mouth button (pull-up input)
-                 chest: int = 26,  # chest button (pull-up input)
-                 back: int = 16,  # back button (pull-up input)
+                 mouth: int = 15,  # mouth button (pull-up input)
+                 chest: int = 16,  # chest button (pull-up input)
+                 back: int = 26,  # back button (pull-up input)
                  voice_name: str = 'en-scottish+m4',  # espeak/pyttsx3
                  voice_volume: int = 0.7,  # espeak/pyttsx3
                  voice_rate: int = 200):  # espeak/pyttsx3

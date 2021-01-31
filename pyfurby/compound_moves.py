@@ -19,7 +19,7 @@ class FurbyCompound:
 
     # Mixed ================================================================
 
-    def bite(self):
+    def bark(self):
         self.wait_until_bitten()
         self.red_pin.value = True
         self.say('woof')
@@ -55,11 +55,11 @@ class FurbyCompound:
         original_rate = self.rate
         self.volume = 0.1
         self.rate = 50
-        self.say('zzzz', move=False)
+        self.say('zed zed zed', move=False)
         time.sleep(1)
-        self.say('zzzz', move=False)
+        self.say('zed zed zed', move=False)
         time.sleep(1)
-        self.say('zzzz', move=False)
+        self.say('zed zed zed', move=False)
         self.volume = original_volume
         self.rate = original_rate
 
