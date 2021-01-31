@@ -1,5 +1,6 @@
 import pyttsx3
-
+import os
+import time
 
 class FurbyTalk:
     def __init__(self, voice_name: str, voice_volume: int, voice_rate: int):
@@ -46,3 +47,11 @@ class FurbyTalk:
         self.engine.setProperty('rate', rate)
 
     rate = property(_get_rate, _set_rate)
+
+    def recite_ip(self):
+        self.say("My local IP address is")
+        time.sleep(0.2)
+        ip = os.popen('hostname -I').read().strip()
+        for octet in ip.replace('.', ' dot ').split(' '):
+            self.say(octet)
+            time.sleep(0.3)
