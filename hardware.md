@@ -20,7 +20,7 @@ The Furby has
 ### Mystery
 By mystery something I mean these two cut wires (below the white mouth sensor):
 
-[[!mystery](images/mystery.thumbnail.jpg)<br/>(click to enlarge)](images/mystery.JPG)
+[![mystery](images/mystery.thumbnail.jpg)<br/>(click to enlarge)](images/mystery.JPG)
 
 They don't close the circuit under any scenario...
 
@@ -52,13 +52,13 @@ Based on a sample size of one, here are some suggestions to test for second hand
 Mine had a dodgy battery unit (rusty and broken connector), so needed disassembly, scrubbing, WD40 and soldering a wire to overcome the broken connections.
 Based on eBay this may be a common fault.
 
-[[!battery](images/battery.thumbnail.jpg)<br/>(click to enlarge)](images/battery.JPG)
+[![battery](images/battery.thumbnail.jpg)<br/>(click to enlarge)](images/battery.JPG)
 
 ## Pi
 
 So I really struggled to pack a Pi Zero between the body and the battery unit.
 
-[[!shell](images/shell.thumbnail.jpg)<br/>(click to enlarge)](images/shell.JPG)
+[![shell](images/shell.thumbnail.jpg)<br/>(click to enlarge)](images/shell.JPG)
 
 ### Header pins
 
@@ -73,7 +73,7 @@ So I opted for the two-row angle header pins with a gap, which worked well. Name
 
 Even though I am unable to do a splice properly I am very pleased with this solution.
 
-[[!header](images/header.thumbnail.jpg)<br/>(click to enlarge)](images/header.JPG)
+[![header](images/header.thumbnail.jpg)<br/>(click to enlarge)](images/header.JPG)
 
 Here is the GPIO pins as seen from the bottom face, i.e. pitched 180° (around the transverse axis) ([Adobe Illustrator file](images/upsidedown_GPIO.ai)):
 
@@ -83,7 +83,7 @@ Actually the first board had a defective wifi on account of a scratch on on it,
 I must have done it as the trace runs to a test pad.
 So apart from the confusion of the pins, soldering upside down may run the risk of damaging the components.
 
-[[!scratch](images/scratch.thumbnail.jpg)<br/>(click to enlarge)](images/scratch.JPG)
+[![scratch](images/scratch.thumbnail.jpg)<br/>(click to enlarge)](images/scratch.JPG)
 
 ### Spaces
 
@@ -94,16 +94,16 @@ So all the wires and components are kept fixed with lots and lots of bluetack.
 
 What fits in is limited by the shell. Here are key parts that need to be keep under close scrutiny.
 
-[[!nogo](images/nogo_shell.thumbnail.jpg)<br/>(click to enlarge)](images/nogo_shell.JPG)
+[![nogo](images/nogo_shell.thumbnail.jpg)<br/>(click to enlarge)](images/nogo_shell.JPG)
 
 The side protuberances slot into:
 
-[[!lhs](images/left_nogo.thumbnail.jpg)<br/>(click to enlarge)](images/left_nogo.JPG)
-[[!rhs](images/right_nogo.thumbnail.jpg)<br/>(click to enlarge)](images/right_nogo.JPG)
+[![lhs](images/left_nogo.thumbnail.jpg)<br/>(click to enlarge)](images/left_nogo.JPG)
+[![rhs](images/right_nogo.thumbnail.jpg)<br/>(click to enlarge)](images/right_nogo.JPG)
 
 The parts internally that cannot be covered are:
 
-[[!nogo](images/nogo_internal.thumbnail.jpg)<br/>(click to enlarge)](images/nogo_internal.JPG)
+[![nogo](images/nogo_internal.thumbnail.jpg)<br/>(click to enlarge)](images/nogo_internal.JPG)
 
 ### microphone
 
@@ -116,12 +116,12 @@ So two things were tried:
 
 The former is a no go as the micro-USB is too long.
 
-[[!issue](images/issue.thumbnail.jpg)<br/>(click to enlarge)](images/issue.JPG)
+[![issue](images/issue.thumbnail.jpg)<br/>(click to enlarge)](images/issue.JPG)
 
 The latter was the primarily reason why the header was soldered upside down.
 Namely, because I wanted to place a micro-USB female breakout module + shim + USB microphone on the top.
 
-[[!usb](images/USB_solution.thumbnail.jpg)<br/>(click to enlarge)](images/USB_solution.JPG)
+[![usb](images/USB_solution.thumbnail.jpg)<br/>(click to enlarge)](images/USB_solution.JPG)
 
 In hindsight it would have been great having slightly longer wires in order to run them out of the shell.
 
@@ -146,12 +146,12 @@ The Furby battery pack has two pads that stick through, cathode fore, anode aft,
 these wired were passed in the passage under the the hinge, which was nice to get used.
 In fact, there are a lot of dead spaces annoyingly.
 
-[[!electrodes](images/electrodes.thumbnail.jpg)<br/>(click to enlarge)](images/electrodes.JPG)
+[![electrodes](images/electrodes.thumbnail.jpg)<br/>(click to enlarge)](images/electrodes.JPG)
 (soldered side of header not yet trimmed)
 
 the powering micro-USB board goes outside as there is a gap under the back button.
 
-[[!outside](images/outside_power.thumbnail.jpg)<br/>(click to enlarge)](images/outside_power.JPG)
+[![outside](images/outside_power.thumbnail.jpg)<br/>(click to enlarge)](images/outside_power.JPG)
 
 ## Reset
 
@@ -159,17 +159,17 @@ I soldered two wires (in yellow, below) to the RUN pin holes, which when connect
 The plan was to shutdown the Pi with `sudo shutdown now` and press the reset button to repower it.
 However, the reset button had a spring which sprung off somewhere, so that is a fail.
 
-[[!extra](images/extras.thumbnail.jpg)<br/>(click to enlarge)](images/extras.JPG)
+[![extra](images/extras.thumbnail.jpg)<br/>(click to enlarge)](images/extras.JPG)
 
 ## Boards
 The Amp is small enough that it can go on the side. Also, a lot of GND wires... this is probably the worst wiring ever.
 
-[[!amp](images/amp.thumbnail.jpg)<br/>(click to enlarge)](images/amp.JPG)
+[![amp](images/amp.thumbnail.jpg)<br/>(click to enlarge)](images/amp.JPG)
 
 On a breadboard the speaker was fine powered by 5V, but tiny, but a 10 nF cap between the PWM GPIO13 wire and GND fixes it as expected.
 I only have this size or the big boys (this works best). Maybe the PWM can be smoothed further, but it is clear enough.
 
-[[!cap](images/cap.thumbnail.jpg)<br/>(click to enlarge)](images/cap.JPG)
+[![cap](images/cap.thumbnail.jpg)<br/>(click to enlarge)](images/cap.JPG)
 
 
 While the gyroscope and the motor driver can go at the end of the battery pack topside.
@@ -179,7 +179,7 @@ Namely one where forward is on the x-axis and upwards is on the z-axis.
 Here I placed it at an angle, which means Earth gravity is not an acceleration on the z-axis alone.
 However, this can be fixed by some vector calculus.
 
-[[!gyro](images/gyro.thumbnail.jpg)<br/>(click to enlarge)](images/gyro.JPG)
+[![gyro](images/gyro.thumbnail.jpg)<br/>(click to enlarge)](images/gyro.JPG)
 
 In hindsight, I would have wired ground and 5V differently, but the placement of the boards is fine.
 
