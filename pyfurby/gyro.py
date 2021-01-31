@@ -35,7 +35,7 @@ class FurbyGyro:
         :return: how fast is it going? (velocity)
         """
         # technically multiplied by transformation matrix
-        return self.calculate_translation_matrix(self.sensor.get_gyro_data())
+        return self.calculate_translation_matrix(self.gyro.get_gyro_data())
 
     @property
     def acceleration(self):
@@ -43,7 +43,7 @@ class FurbyGyro:
         :return: how fast is it speeding up? (acceleration)
         """
         # technically multiplied by transformation matrix
-        return self.calculate_translation_matrix(self.sensor.get_accel_data())
+        return self.calculate_translation_matrix(self.gyro.get_accel_data())
 
     @property
     def temperature(self):
