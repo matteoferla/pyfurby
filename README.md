@@ -9,7 +9,8 @@ The victim, looking scared...
 
 See [API notes](API.md)
 
-The objective is to make the furby easy to control and customise. Say
+The objective is to make the furby easy to control and customise.
+Say in a Furby served Jupyter notebook within the local network:
     
     from pyfurby import Furby
     furby = Furby()
@@ -25,6 +26,11 @@ It contains several methods, ranging from the comical
 to the useful 
    
     furby.recite_ip()
+    
+And can be set commands remotely:
+
+    furby.restless()
+    
 
 ## Background
 

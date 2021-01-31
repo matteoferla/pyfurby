@@ -106,6 +106,10 @@ Therefore if multiple modded Furbies want to be controlled,
 they need to be controlled via the Restful API externally.
 That is my laptop sends a web request to all of them and they obey.
 
+    furby.restless() # it is now surving on port 1998
+
+The small script `pyfurby_api.py` has a concise interface to this:
+
     furby = RemoteFurby('192.168.1.10')
     furby.say(text='hello world')
     furby.help() # return the list of commands
@@ -113,5 +117,29 @@ That is my laptop sends a web request to all of them and they obey.
 ### Security
 
 The Jupyter notebook does require a password. However, not in Restless API mode.
+Flask will give the usual warning that it is not secure.
+However, if someone has already access to your home network, it means you trust them
+to not steal or break your physical stuff which is kind of a bigger deal.
+But if not something like will do the trick, where waitress, 
+a different port (security via obfuscation) 
+and a key provide security... but this is ridiculous.
+And the key would be visible over not SSL, so that needs encrypting.
+
+    import waitress
+    
+    class SecureFurby(Furby):
+        key = 'secret'
+    
+        def restful(self, port:int): 
+            # override RestlessFurby method
+            app = Flask(__name__)
+            app.add_url_rule('/<cmd>', 'command', self.secure)
+            app.add_url_rule('/', 'home', self._home)
+            waitress.serve(app, port=port, host='*')
+            
+        def secure(self, cmd):
+            if request.args.get('key') != self.key:
+                return 'Wrong key'
+            self._resolve_request(cmd)
 
     
