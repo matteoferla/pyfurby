@@ -6,7 +6,7 @@ This is the way to control easily in Python3 a Furby as configured in [hardware]
     furby = Furby()
     furby.say('Hello world')
     
-If the Furby has any differences from my set-up
+If the Furby has any differences from my set-up, these can be passed as arguments to `Furby`.
 
 * `pwma`: int = 22, motor driver speed - white
 * `stby`: int = 4, motor driver on
@@ -21,8 +21,12 @@ If the Furby has any differences from my set-up
 * `voice_name`: str = 'en-scottish+m4', espeak/pyttsx3
 * `voice_volume`: int = 0.7, espeak/pyttsx3
 * `voice_rate`: int = 200, espeak/pyttsx3
+ 
+The functionality of the class is split into various inherited classes. So only `Furby` is probably worth touching.
+ 
+## Motor
 
-It has some preset actions, such as:
+It has several actions present, such as:
     
     furby.ambulance() # make its LED flash like an ambulance
     furby.yell("I am angry")
@@ -32,9 +36,6 @@ It has some preset actions, such as:
     furby.flutter() # "blink" salaciously
     furby.blink()
     
- 
-## Motor
-
 These are all small snippets using the same motor controls:
 
     furby.set_percent_speed(70) # a value between 55 and 100 percent.
@@ -66,6 +67,10 @@ The motor is powered by 3.3V, the percentage is already converted from hexadecim
 
 ## Talk
 
+Under the hood it uses `pyttsx3` module which uses `espeak`. This library is functional but the voice is very poor.
+In fact, I'd recommend trying `espeak` on a different machine with proper speakers.
+It appears that `pyttsx3` may support `espeak-ng`, but I have not tried it.
+
 The gender on espeak/pyttsx3 is controlled by adding `+m1` to `+m4` for male or `+f1` to `+f4` for female after the voice id.
 To get the full list of voices:
 
@@ -94,6 +99,16 @@ Most of these permitted actions have a `wait_until_xxx` method. None of these ar
                         'squeezed': furby.fall_asleep,
                         })
 
+## Restless
+
+The interface allows the control of a single Furby (itself).
+Therefore if multiple modded Furbies want to be controlled, 
+they need to be controlled via the Restful API externally.
+That is my laptop sends a web request to all of them and they obey.
+
+    furby = RemoteFurby('192.168.1.10')
+    furby.say(text='hello world')
+    furby.help() # return the list of commands
 
 
 

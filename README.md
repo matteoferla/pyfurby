@@ -1,8 +1,15 @@
-# Furbexa
+# PyFurby
+Control a Raspberry Pi Zero enpowered furby via a served Jupyter notebook or via a restless API.
 
 The victim, looking scared...
 
 [![fear](images/fear.thumbnail.jpg)<br/>(click to enlarge)](images/fear.JPG)
+
+## Module details and functionality
+
+See [API notes](API.md)
+
+## Background
 
 The idea and the majority of the setup came form [a blog post](https://howchoo.com/g/otewzwmwnzb/amazon-echo-furby-using-raspberry-pi-furlexa)
 However, there were lots of problems and differences.
@@ -12,6 +19,7 @@ Namely
 * the components are squeezed in differently
 * gyroscope
 
+## Project
 This project can be divided into:
 
 * [hardware](hardware.md)

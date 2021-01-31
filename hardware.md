@@ -36,8 +36,12 @@ Parts I have added:
 * a large red LED, a small green LED and a photoresistor just to fill the hole.
 * USB PnP microphone
 
-I also plan to replace the USB microphone with a I2S microphone, because the former is rather too sensitive to the slightest movement.
+The Amp and microphone where replaced with 
 
+* SPH0645LM4H I2S microphone
+* MAX98357A I2S Amp
+
+This was because the microphone+shim was too sensitive to the slightest movement.
 
 ## Things to test
 
