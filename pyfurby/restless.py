@@ -50,4 +50,4 @@ class RestlessFurby: # restful...
         app = Flask(__name__)
         app.add_url_rule('/<cmd>', 'command', self._resolve_request)
         app.add_url_rule('/', 'home', self._home)
-        waitress(app, port=1998, host='0.0.0.0')
+        waitress.serve(app, port=1998, host='0.0.0.0')
