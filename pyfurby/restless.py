@@ -1,4 +1,3 @@
-from flask import Flask, request
 from typing import get_type_hints
 import pydoc
 
@@ -14,6 +13,7 @@ class RestlessFurby: # restful...
         :return:
         """
         try:
+            from flask import Flask, request
             kwargs = request.args
             print(f'Request {cmd}: {kwargs} from {request.remote_addr}')
             getattr(self, cmd)(**kwargs)
@@ -45,7 +45,9 @@ class RestlessFurby: # restful...
         Note that it is using Flask's internal app serving method, so is not suitable for use over the internet...
         :return:
         """
+        from flask import Flask
+        import waitress
         app = Flask(__name__)
         app.add_url_rule('/<cmd>', 'command', self._resolve_request)
         app.add_url_rule('/', 'home', self._home)
-        app.run(port=1998, host='0.0.0.0')
+        waitress(app, port=1998, host='0.0.0.0')
