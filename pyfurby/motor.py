@@ -62,6 +62,9 @@ class FurbyMotor:
         else: # halted
             pass
 
+    def get_percent_speed(self):
+        return self.high_speed * 100 / 0xffff
+
     def set_percent_speed(self, speed: int):
         """
         Will convert to high_speed hex (``0xffff``)
@@ -71,6 +74,8 @@ class FurbyMotor:
         self.high_speed = int(speed/100 * 0xffff)
         if self.ain1_pin.value or self.ain2_pin.value:
             self.pwm_pin.duty_cycle = self.high_speed
+
+    percent_speed = property(get_percent_speed, set_percent_speed)
 
     def wait_until_revolution(self):
         """

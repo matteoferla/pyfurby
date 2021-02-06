@@ -11,13 +11,79 @@ from .talk import FurbyTalk
 from .sound import FurbySound
 from .gyro import FurbyGyro
 from .restless import RestlessFurby
+from .background import BackFurby
 from .compound_moves import FurbyCompound  # more like silly actions
+from .temporary import TemporaryValue
 
 import time
 from typing import Optional, Callable, Dict
 
 
-class Furby(FurbyMotor, FurbyButtons, FurbyTalk, FurbySound, FurbyCompound, FurbyGyro, RestlessFurby):
+class Furby(FurbyMotor, FurbyButtons, FurbyTalk, BackFurby, FurbySound, FurbyCompound, FurbyGyro, RestlessFurby):
+    """
+    Control a Furby with Python and a pi!
+
+    :ivar acceleration: gyroscope
+    :vartype acceleration: dict
+    :ivar aft_squeezed: is the back squeezed?
+    :vartype aft_squeezed: bool
+    :ivar ain1_pin: H-bridge for motor
+    :vartype ain1_pin: DigitalInOut
+    :ivar ain2_pin: H-bridge for motor
+    :vartype ain2_pin: DigitalInOut
+    :ivar back_pin: back button (input digitalio.Pull.UP)
+    :vartype back_pin: DigitalInOut
+    :ivar bitten: is it bitting down?
+    :vartype bitten: bool
+    :ivar chest_pin: chest button (input digitalio.Pull.UP)
+    :vartype chest_pin: DigitalInOut
+    :ivar cycle_pin: cycle button (input digitalio.Pull.UP)
+    :vartype cycle_pin: DigitalInOut
+    :ivar engine: espeak engine
+    :vartype engine: Engine
+    :ivar fore_squeezed: is back squeezed?
+    :vartype fore_squeezed: bool
+    :ivar green_pin: forehead green
+    :vartype green_pin: DigitalInOut
+    :ivar gyro: The gyroscope obkect
+    :vartype gyro: mpu6050
+    :ivar high_speed: hex value. See percent_speed
+    :vartype high_speed: int
+    :ivar lifted:
+    :vartype lifted: bool
+    :ivar mouth_pin:
+    :vartype mouth_pin: DigitalInOut
+    :ivar moved:
+    :vartype moved: bool
+    :ivar permitted_actions:
+    :vartype permitted_actions: list
+    :ivar playing:
+    :vartype playing: bool
+    :ivar pwm_pin:
+    :vartype pwm_pin: PWMOut
+    :ivar rate:
+    :vartype rate: int
+    :ivar red_pin:
+    :vartype red_pin: DigitalInOut
+    :ivar resting_x:
+    :vartype resting_x: float
+    :ivar resting_y:
+    :vartype resting_y: float
+    :ivar resting_z:
+    :vartype resting_z: float
+    :ivar soundcard_status_file:
+    :vartype soundcard_status_file: str
+    :ivar speed:
+    :vartype speed: dict
+    :ivar squeezed:
+    :vartype squeezed: bool
+    :ivar standby_pin:
+    :vartype standby_pin: DigitalInOut
+    :ivar temperature:
+    :vartype temperature: float
+    :ivar volume:
+    :vartype volume: float
+    """
 
     def __init__(self,
                  pwma: int = 22,  # motor driver speed - white
@@ -37,7 +103,9 @@ class Furby(FurbyMotor, FurbyButtons, FurbyTalk, FurbySound, FurbyCompound, Furb
         FurbyButtons.__init__(self, red=red, green=green, mouth=mouth, chest=chest, back=back)
         FurbyTalk.__init__(self, voice_name=voice_name, voice_rate=voice_rate, voice_volume=voice_volume)
         FurbyGyro.__init__(self)
-        # FurbySound and FurbyTests no init.
+        # FurbySound, BackFurby and FurbyTests no init.
+        TemporaryValue.furby = self
+        self.use_temporarily = TemporaryValue
 
     def move_on_play(self):
         """
@@ -85,6 +153,7 @@ class Furby(FurbyMotor, FurbyButtons, FurbyTalk, FurbySound, FurbyCompound, Furb
         self.say(text)
         self.high_speed = original_speed
         self.volume = original_volume
+        self.red_pin.value = False
 
     permitted_actions = ['lifted', 'moved', 'bitten', 'squeezed', 'aft_squeezed', 'fore_squeezed']
 

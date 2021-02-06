@@ -4,8 +4,10 @@ This script is to be run locally, i.e. it sends commands to the furby which is r
     furby.restless()
 
 """
+__version__ = '0.2'
 
 import requests
+
 
 class RemoteFurby:
     """
@@ -18,9 +20,10 @@ class RemoteFurby:
 
     Do note, key value arguments only.
     """
-    def __init__(self, ip:str, port:int=1998):
-        self.ip=ip
-        self.port=port
+
+    def __init__(self, ip: str, port: int = 1998):
+        self.ip = ip
+        self.port = port
 
     def help(self):
         return requests.get(f'{self.url}/').text
@@ -32,4 +35,5 @@ class RemoteFurby:
     def __getattr__(self, cmd):
         def command(**params):
             return requests.get(f'{self.url}/{cmd}', params=params).json()
+
         return command
