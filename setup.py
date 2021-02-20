@@ -27,7 +27,7 @@ setup(
     url='https://github.com/matteoferla/pyfurby',
     license='MIT',
     author='matteoferla',
-    author_email='matteo.ferla@gm',
+    author_email='matteo.ferla@gmail.com',
     description='Controlling the various parts of the Furby with Python and a Pi Zero',
     long_description=long_description,
     install_requires=requires
