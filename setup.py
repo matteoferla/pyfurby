@@ -2,6 +2,11 @@ from setuptools import setup, find_packages
 import os
 here = os.path.abspath(os.path.dirname(__file__))
 
+from warnings import warn
+import platform
+
+if platform.uname().machine != 'armv6l':
+    warn('This can only be installed on a Raspberry Pi Zero')
 
 requires = [
     'Flask',
