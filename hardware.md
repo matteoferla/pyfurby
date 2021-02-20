@@ -5,7 +5,7 @@
 ## Parts
 The Furby has
 
-* a 32Ω 0.25W speaker
+* a 32Ω 0.25W 4 cm x 1 cm speaker
 * a mouth button
 * a chest button (on the speaker)
 * a back button

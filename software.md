@@ -187,6 +187,9 @@ So the microphone works but the PWA does not. I am using GPIO13 so it should not
 PWM_1 is GPIO13 so that is correct, but `aplay -l` cannot see it. So it's an also problem.
 
 
+    sudo apt-get install libportaudio-dev
+
+
 ## Alexa
 
 This differs from the tutorial and is more straightforward.

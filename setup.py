@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup, find_packages
 import os
 here = os.path.abspath(os.path.dirname(__file__))
 
@@ -18,7 +18,7 @@ long_description = open(os.path.join(here, 'README.md')).read()
 setup(
     name='pyfurby',
     version='0.1',
-    packages=['pyfurby'],
+    packages=find_packages(),
     url='https://github.com/matteoferla/pyfurby',
     license='MIT',
     author='matteoferla',

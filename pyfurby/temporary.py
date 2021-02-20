@@ -11,7 +11,7 @@ class TemporaryValue:
     >>> with furby.use_temporarily('red', True):
     >>>       pass
     """
-    furby = None
+    _furby = None
 
     def __init__(self, attribute_name, value):
         assert attribute_name in ('volume', 'rate', 'speed', 'red', 'green')
@@ -21,29 +21,29 @@ class TemporaryValue:
 
     def get(self):
         if self.attribute_name == 'volume':
-            return self.furby.volume
+            return self._furby.volume  # this is not a typo
         elif self.attribute_name == 'rate':
-            return self.furby.rate
+            return self._furby.rate
         elif self.attribute_name == 'speed':
-            return self.furby.percent_speed
+            return self._furby.percent_speed
         elif self.attribute_name == 'red':
-            return self.furby.red_pin.value
+            return self._furby.red_pin.value
         elif self.attribute_name == 'green':
-            return self.furby.green_pin.value
+            return self._furby.green_pin.value
         else:
             raise ValueError(f'Unknown attribute name {self.attribute_name}')
 
     def set(self, value):
         if self.attribute_name == 'volume':
-            self.furby.volume = value
+            self._furby.volume = value
         elif self.attribute_name == 'rate':
-            self.furby.rate = value
+            self._furby.rate = value
         elif self.attribute_name == 'speed':
-            self.furby.percent_speed = value
+            self._furby.percent_speed = value
         elif self.attribute_name == 'red':
-            self.furby.red_pin.value = value
+            self._furby.red_pin.value = value
         elif self.attribute_name == 'green':
-            self.furby.green_pin.value = value
+            self._furby.green_pin.value = value
         else:
             raise ValueError(f'Unknown attribute name {self.attribute_name}')
 
