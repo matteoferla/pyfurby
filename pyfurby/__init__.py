@@ -14,12 +14,21 @@ from .restless import RestlessFurby
 from .background import BackFurby
 from .compound_moves import FurbyCompound  # more like silly actions
 from .temporary import TemporaryValue
+from .tests import TestFurby
 
 import time
 from typing import Optional, Callable, Dict
 
 
-class Furby(FurbyMotor, FurbyButtons, FurbyTalk, BackFurby, FurbySound, FurbyCompound, FurbyGyro, RestlessFurby):
+class Furby(FurbyMotor,
+            FurbyButtons,
+            FurbyTalk,
+            BackFurby,
+            FurbySound,
+            FurbyCompound,
+            FurbyGyro,
+            RestlessFurby,
+            TestFurby):
     """
     Control a Furby with Python and a pi!
 
@@ -132,9 +141,15 @@ class Furby(FurbyMotor, FurbyButtons, FurbyTalk, BackFurby, FurbySound, FurbyCom
         :param move: move while talking
         :return:
         """
-        self.move_clockwise()
-        super().say(text)
-        self.halt()
+        if move:
+            self.move_clockwise()
+            for phrase in text.replace(',','.').split('.'):
+                super().say(phrase)
+                self.inverse()
+                time.sleep(0.1)
+            self.halt()
+        else:
+            super().say(text)
 
     def yell(self, text):
         """

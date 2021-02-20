@@ -45,6 +45,8 @@ These are all small snippets using the same motor controls:
     furby.complete_revolution() # eyes wide open
     furby.wait_until_revolution()
 
+For more commands see [full docs](full_doc.md).
+
 The speed is not linear and will depend on how charged the batteries are.
 It is quite tricky to time as there revolution completion trigger stays pressed for several degrees worth of rotation
 and the motor struggles below 55s and moves in jerks.
@@ -114,7 +116,7 @@ The small script `pyfurby_api.py` has a concise interface to this:
     furby.say(text='hello world')
     furby.help() # return the list of commands
 
-### Security
+## Security
 
 The Jupyter notebook does require a password. However, not in Restless API mode.
 Flask will give the usual warning that it is not secure.
@@ -141,5 +143,34 @@ And the key would be visible over not SSL, so that needs encrypting.
             if request.args.get('key') != self.key:
                 return 'Wrong key'
             self._resolve_request(cmd)
+            
+## Room for improvement
+
+### Sphinx documentation
+This needs to be compiled on the Furby...
+Except it does not work.
+Weird hack used to generate [full docs](full_doc.md).
+
+### Motor control
+The furby should calibrate its timings automatically
+and know where the motor is.
+
+### Gyroscpe
+The gyroscope code needs fixing.
+The gyroscope is not level or from facing, so some maths ought to be done to convert.
+
+### Voice
+Original espeak is rather aweful...
+        
+### Words
+
+As discussed in [hardware notes](hardware.md), 
+it would be nice having the furby do a bit more than just move while talking.
+For example invert motion direction after each word.
+Even though `pyttsx3` has the listeners, 
+'started-utterance', 'started-word', 'finished-utterance',
+the started-word is not trigger per word, but per sentence.
+Furthermore, there seems to be some delay with the `engine.connect`.
+Also, were each word to be uttered separately, it makes a speaker crackle.
 
     

@@ -1,3 +1,5 @@
+from typing import Any
+
 class TemporaryValue:
     """
     context manager for a temporary value.
@@ -13,7 +15,7 @@ class TemporaryValue:
     """
     _furby = None
 
-    def __init__(self, attribute_name, value):
+    def __init__(self, attribute_name: str, value: Any):
         assert attribute_name in ('volume', 'rate', 'speed', 'red', 'green')
         self.attribute_name = attribute_name
         self.temporary = value

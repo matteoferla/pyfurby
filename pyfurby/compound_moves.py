@@ -35,6 +35,12 @@ class FurbyCompound:
     ## Motor based.
 
     def flutter(self, cycles: int=5):
+        """
+        Flutters eye lids
+
+        :param cycles:
+        :return:
+        """
         self.set_percent_speed(70)
         for i in range(cycles):
             for action in (self.move_clockwise, self.move_counterclockwise):
@@ -45,6 +51,11 @@ class FurbyCompound:
         self.halt()
 
     def fall_asleep(self):
+        """
+        Mimics falling asleep (does not shutdown)
+
+        :return:
+        """
         self.complete_revolution(70)
         self.halt()
         self.set_percent_speed(55)
@@ -77,6 +88,13 @@ class FurbyCompound:
         self.halt()
 
     def dance(self, speed:Optional[float]=None, cycles:int=10):
+        """
+        Moves randomly.
+
+        :param speed:
+        :param cycles:
+        :return:
+        """
         if speed:
             self.set_percent_speed(speed)
         self.complete_revolution()
@@ -89,10 +107,17 @@ class FurbyCompound:
         self.halt()
 
     def blink(self, cycles:int=10):
+        """
+        Blinks. Inverse of flutter. Note that depending on power it may overshoot as it's the
+        opposite side of the rotation pin.
+
+        :param cycles:
+        :return:
+        """
         self.shut_eyes(quickly=True)
         self.set_percent_speed(100)
         for i in range(cycles):
             for action in (self.move_clockwise, self.move_counterclockwise):
                 action()
-                time.sleep(0.4)
+                time.sleep(0.6)
         self.halt()
