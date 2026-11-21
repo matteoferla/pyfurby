@@ -8,14 +8,14 @@ class FurbyButtons:
 
     def __init__(self, red: int, green: int, mouth: int, chest: int, back: int):
         # LEDs
-        self.red_pin = digitalio.DigitalInOut(digitalio.Pin(red))  #: red pin LED
-        self.green_pin = digitalio.DigitalInOut(digitalio.Pin(green)) #: green pin LED
+        self.red_pin = digitalio.DigitalInOut(getattr(board, f"D{red}"))  #: red pin LED
+        self.green_pin = digitalio.DigitalInOut(getattr(board, f"D{green}")) #: green pin LED
         for color_pin in (self.red_pin, self.green_pin):
             color_pin.switch_to_output(False)
         # buttons
-        self.mouth_pin = digitalio.DigitalInOut(digitalio.Pin(mouth))  #: mouth pin trigger "bitten"
-        self.chest_pin = digitalio.DigitalInOut(digitalio.Pin(chest))  #: chest pin trigger: "fore_squeezed"/"squeezed"
-        self.back_pin = digitalio.DigitalInOut(digitalio.Pin(back))  #: back pin trigger: "aft_squeezed"/"squeezed"
+        self.mouth_pin = digitalio.DigitalInOut(getattr(board, f"D{mouth}"))  #: mouth pin trigger "bitten"
+        self.chest_pin = digitalio.DigitalInOut(getattr(board, f"D{chest}"))  #: chest pin trigger: "fore_squeezed"/"squeezed"
+        self.back_pin = digitalio.DigitalInOut(getattr(board, f"D{back}"))  #: back pin trigger: "aft_squeezed"/"squeezed"
         for button_pin in (self.mouth_pin, self.chest_pin, self.back_pin):
             button_pin.switch_to_input(pull=digitalio.Pull.UP)
 

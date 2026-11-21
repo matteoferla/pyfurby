@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import digitalio, board, pulseio
+import digitalio, board, pwmio, time
 from typing import Optional
 
 class FurbyMotor:
@@ -11,20 +11,20 @@ class FurbyMotor:
 
     def __init__(self, pwma: int, stby: int, ain1: int, ain2: int, cycle: int):
         # standby: H-bridges to work when high
-        self.standby_pin = digitalio.DigitalInOut(digitalio.Pin(stby))  #: standy pin for TB6612
+        self.standby_pin = digitalio.DigitalInOut(getattr(board, f"D{stby}"))  #: standy pin for TB6612
         self.standby_pin.switch_to_output(False)
         # direction 1
-        self.ain1_pin = digitalio.DigitalInOut(digitalio.Pin(ain1))   #: Ain1 pin for TB6612
+        self.ain1_pin = digitalio.DigitalInOut(getattr(board, f"D{ain1}"))   #: Ain1 pin for TB6612
         self.ain1_pin.switch_to_output(False)
         # direction 2
-        self.ain2_pin = digitalio.DigitalInOut(digitalio.Pin(ain2))     #: Ain2 pin for TB6612
+        self.ain2_pin = digitalio.DigitalInOut(getattr(board, f"D{ain2}"))     #: Ain2 pin for TB6612
         self.ain2_pin.switch_to_output(False)
         # pwma
-        self.pwm_pin = pulseio.PWMOut(pin=digitalio.Pin(pwma),
+        self.pwm_pin = pwmio.PWMOut(pin=getattr(board, f"D{pwma}"),
                                       duty_cycle=0,
                                       frequency=100)     #: pwm pin for TB6612
         # cycle pin
-        self.cycle_pin = digitalio.DigitalInOut(digitalio.Pin(cycle))  #: is the cycle complete trigger pin (back of furby)
+        self.cycle_pin = digitalio.DigitalInOut(getattr(board, f"D{cycle}"))  #: is the cycle complete trigger pin (back of furby)
         self.cycle_pin.switch_to_input(pull=digitalio.Pull.UP)
 
     def move_clockwise(self):
@@ -77,12 +77,19 @@ class FurbyMotor:
 
     percent_speed = property(get_percent_speed, set_percent_speed)
 
-    def wait_until_revolution(self):
+    def wait_until_revolution(self, timeout: float = 5.0):
         """
         Idle until the motors complete a revolution/cycle (back trigger)
         """
-        while self.cycle_pin.value:
-            pass
+        deadline = time.monotonic() + timeout
+        try:
+            while self.cycle_pin.value:
+                if time.monotonic() >= deadline:
+                    raise TimeoutError("Cycle switch did not trigger; check motor/switch wiring")
+                time.sleep(0.005)
+        except BaseException:
+            self.halt()
+            raise
 
     def complete_revolution(self, speed: Optional[int]=None):
         """

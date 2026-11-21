@@ -1,0 +1,13 @@
+[Unit]
+Description=Furby Jupyter notebooks
+After=network.target
+
+[Service]
+User=matteo
+WorkingDirectory=/home/matteo/notebooks
+ExecStart=/home/matteo/furby-venv/bin/jupyter-lab --config=/home/matteo/.config/furby/jupyter_config.py
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
