@@ -1,0 +1,315 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1280" viewBox="0 0 2400 1280">
+<rect width="2400" height="1280" fill="#f8fafc"/>
+<style>text{font-family:Arial,Helvetica,sans-serif}</style>
+<text x="70" y="68" font-size="43" fill="#0f172a" font-weight="bold" text-anchor="start">FURBY • UNDERSIDE GPIO MAP</text>
+<text x="70" y="112" font-size="26" fill="#475569" font-weight="normal" text-anchor="start">Oriented exactly like your photo: header across the top, microSD socket on the right.</text>
+<rect x="70" y="142" width="2260" height="57" rx="12" fill="#dbeafe"/>
+<text x="95" y="180" font-size="26" fill="#075985" font-weight="bold" text-anchor="start">Far / board-edge row = EVEN pins     •     Near / board-interior row = ODD pins     •     PIN 1 = LOWER RIGHT</text>
+<rect x="80" y="480" width="2200" height="570" rx="60" fill="#e8f3e9" stroke="#8aab95" stroke-width="3"/>
+<circle cx="127" cy="527" r="20" fill="#f8fafc" stroke="#c8b77b" stroke-width="8"/>
+<circle cx="127" cy="1003" r="20" fill="#f8fafc" stroke="#c8b77b" stroke-width="8"/>
+<circle cx="2233" cy="527" r="20" fill="#f8fafc" stroke="#c8b77b" stroke-width="8"/>
+<circle cx="2233" cy="1003" r="20" fill="#f8fafc" stroke="#c8b77b" stroke-width="8"/>
+<rect x="2260" y="755" width="70" height="190" rx="8" fill="#334155"/>
+<text x="2240" y="990" font-size="24" fill="#334155" font-weight="bold" text-anchor="middle">microSD</text>
+<rect x="135" y="492" width="1970" height="132" rx="14" fill="#d9e2e6" stroke="#94a3b8"/>
+<circle cx="170" cy="520" r="22" fill="#0369a1"/>
+<text x="170" y="527" text-anchor="middle" font-size="22" font-weight="bold" fill="white">40</text>
+<path d="M170 496 V464" fill="none" stroke="#0369a1" stroke-width="2"/>
+<g transform="translate(170,450) rotate(-60)">
+<text x="0" y="0" font-size="23" fill="#0369a1" font-weight="bold" text-anchor="start">Pi → amplifier data</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO21 • to MAX98357A DIN</text>
+</g>
+<circle cx="170" cy="595" r="22" fill="#334155"/>
+<text x="170" y="602" text-anchor="middle" font-size="22" font-weight="bold" fill="white">39</text>
+<path d="M170 619 V642" fill="none" stroke="#334155" stroke-width="2"/>
+<g transform="translate(170,658) rotate(60)">
+<text x="0" y="0" font-size="23" fill="#334155" font-weight="bold" text-anchor="start">Ground</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GND</text>
+</g>
+<circle cx="270" cy="520" r="22" fill="#0369a1"/>
+<text x="270" y="527" text-anchor="middle" font-size="22" font-weight="bold" fill="white">38</text>
+<path d="M270 496 V464" fill="none" stroke="#0369a1" stroke-width="2"/>
+<g transform="translate(270,450) rotate(-60)">
+<text x="0" y="0" font-size="23" fill="#0369a1" font-weight="bold" text-anchor="start">Microphone data → Pi</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO20 • from SPH0645 DOUT</text>
+</g>
+<circle cx="270" cy="595" r="22" fill="#047857"/>
+<text x="270" y="602" text-anchor="middle" font-size="22" font-weight="bold" fill="white">37</text>
+<path d="M270 619 V642" fill="none" stroke="#047857" stroke-width="2"/>
+<g transform="translate(270,658) rotate(60)">
+<text x="0" y="0" font-size="23" fill="#047857" font-weight="bold" text-anchor="start">Back switch</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO26 • back</text>
+</g>
+<circle cx="370" cy="520" r="22" fill="#047857"/>
+<text x="370" y="527" text-anchor="middle" font-size="22" font-weight="bold" fill="white">36</text>
+<path d="M370 496 V464" fill="none" stroke="#047857" stroke-width="2"/>
+<g transform="translate(370,450) rotate(-60)">
+<text x="0" y="0" font-size="23" fill="#047857" font-weight="bold" text-anchor="start">Chest switch</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO16 • chest</text>
+</g>
+<circle cx="370" cy="595" r="22" fill="#0369a1"/>
+<text x="370" y="602" text-anchor="middle" font-size="22" font-weight="bold" fill="white">35</text>
+<path d="M370 619 V642" fill="none" stroke="#0369a1" stroke-width="2"/>
+<g transform="translate(370,658) rotate(60)">
+<text x="0" y="0" font-size="23" fill="#0369a1" font-weight="bold" text-anchor="start">Audio word clock</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO19 • amp + mic LRCLK / WS</text>
+</g>
+<circle cx="470" cy="520" r="22" fill="#334155"/>
+<text x="470" y="527" text-anchor="middle" font-size="22" font-weight="bold" fill="white">34</text>
+<path d="M470 496 V464" fill="none" stroke="#334155" stroke-width="2"/>
+<g transform="translate(470,450) rotate(-60)">
+<text x="0" y="0" font-size="23" fill="#334155" font-weight="bold" text-anchor="start">Ground</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GND</text>
+</g>
+<circle cx="470" cy="595" r="22" fill="#64748b"/>
+<text x="470" y="602" text-anchor="middle" font-size="22" font-weight="bold" fill="white">33</text>
+<path d="M470 619 V642" fill="none" stroke="#64748b" stroke-width="2"/>
+<g transform="translate(470,658) rotate(60)">
+<text x="0" y="0" font-size="23" fill="#64748b" font-weight="bold" text-anchor="start">Unused</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO13</text>
+</g>
+<circle cx="570" cy="520" r="22" fill="#047857"/>
+<text x="570" y="527" text-anchor="middle" font-size="22" font-weight="bold" fill="white">32</text>
+<path d="M570 496 V464" fill="none" stroke="#047857" stroke-width="2"/>
+<g transform="translate(570,450) rotate(-60)">
+<text x="0" y="0" font-size="23" fill="#047857" font-weight="bold" text-anchor="start">Motor cycle switch</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO12 • cycle input</text>
+</g>
+<circle cx="570" cy="595" r="22" fill="#64748b"/>
+<text x="570" y="602" text-anchor="middle" font-size="22" font-weight="bold" fill="white">31</text>
+<path d="M570 619 V642" fill="none" stroke="#64748b" stroke-width="2"/>
+<g transform="translate(570,658) rotate(60)">
+<text x="0" y="0" font-size="23" fill="#64748b" font-weight="bold" text-anchor="start">Unused</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO6</text>
+</g>
+<circle cx="670" cy="520" r="22" fill="#334155"/>
+<text x="670" y="527" text-anchor="middle" font-size="22" font-weight="bold" fill="white">30</text>
+<path d="M670 496 V464" fill="none" stroke="#334155" stroke-width="2"/>
+<g transform="translate(670,450) rotate(-60)">
+<text x="0" y="0" font-size="23" fill="#334155" font-weight="bold" text-anchor="start">Ground</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GND</text>
+</g>
+<circle cx="670" cy="595" r="22" fill="#64748b"/>
+<text x="670" y="602" text-anchor="middle" font-size="22" font-weight="bold" fill="white">29</text>
+<path d="M670 619 V642" fill="none" stroke="#64748b" stroke-width="2"/>
+<g transform="translate(670,658) rotate(60)">
+<text x="0" y="0" font-size="23" fill="#64748b" font-weight="bold" text-anchor="start">Unused</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO5</text>
+</g>
+<circle cx="770" cy="520" r="22" fill="#64748b"/>
+<text x="770" y="527" text-anchor="middle" font-size="22" font-weight="bold" fill="white">28</text>
+<path d="M770 496 V464" fill="none" stroke="#64748b" stroke-width="2"/>
+<g transform="translate(770,450) rotate(-60)">
+<text x="0" y="0" font-size="23" fill="#64748b" font-weight="bold" text-anchor="start">Leave unused</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO1 • ID_SC / HAT EEPROM</text>
+</g>
+<circle cx="770" cy="595" r="22" fill="#64748b"/>
+<text x="770" y="602" text-anchor="middle" font-size="22" font-weight="bold" fill="white">27</text>
+<path d="M770 619 V642" fill="none" stroke="#64748b" stroke-width="2"/>
+<g transform="translate(770,658) rotate(60)">
+<text x="0" y="0" font-size="23" fill="#64748b" font-weight="bold" text-anchor="start">Leave unused</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO0 • ID_SD / HAT EEPROM</text>
+</g>
+<circle cx="870" cy="520" r="22" fill="#64748b"/>
+<text x="870" y="527" text-anchor="middle" font-size="22" font-weight="bold" fill="white">26</text>
+<path d="M870 496 V464" fill="none" stroke="#64748b" stroke-width="2"/>
+<g transform="translate(870,450) rotate(-60)">
+<text x="0" y="0" font-size="23" fill="#64748b" font-weight="bold" text-anchor="start">Unused</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO7</text>
+</g>
+<circle cx="870" cy="595" r="22" fill="#334155"/>
+<text x="870" y="602" text-anchor="middle" font-size="22" font-weight="bold" fill="white">25</text>
+<path d="M870 619 V642" fill="none" stroke="#334155" stroke-width="2"/>
+<g transform="translate(870,658) rotate(60)">
+<text x="0" y="0" font-size="23" fill="#334155" font-weight="bold" text-anchor="start">Ground</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GND</text>
+</g>
+<rect x="948" y="498" width="44" height="44" rx="7" fill="#fff1f2" stroke="#b91c1c" stroke-width="2" stroke-dasharray="5 3"/>
+<text x="970" y="527" text-anchor="middle" font-size="22" font-weight="bold" fill="#b91c1c">24</text>
+<path d="M970 496 V464" fill="none" stroke="#b91c1c" stroke-width="2"/>
+<g transform="translate(970,450) rotate(-60)">
+<text x="0" y="0" font-size="23" fill="#b91c1c" font-weight="bold" text-anchor="start">NO HEADER</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO8 • do not connect</text>
+</g>
+<rect x="948" y="573" width="44" height="44" rx="7" fill="#fff1f2" stroke="#b91c1c" stroke-width="2" stroke-dasharray="5 3"/>
+<text x="970" y="602" text-anchor="middle" font-size="22" font-weight="bold" fill="#b91c1c">23</text>
+<path d="M970 619 V642" fill="none" stroke="#b91c1c" stroke-width="2"/>
+<g transform="translate(970,658) rotate(60)">
+<text x="0" y="0" font-size="23" fill="#b91c1c" font-weight="bold" text-anchor="start">NO HEADER</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO11 • do not connect</text>
+</g>
+<rect x="1048" y="498" width="44" height="44" rx="7" fill="#fff1f2" stroke="#b91c1c" stroke-width="2" stroke-dasharray="5 3"/>
+<text x="1070" y="527" text-anchor="middle" font-size="22" font-weight="bold" fill="#b91c1c">22</text>
+<path d="M1070 496 V464" fill="none" stroke="#b91c1c" stroke-width="2"/>
+<g transform="translate(1070,450) rotate(-60)">
+<text x="0" y="0" font-size="23" fill="#b91c1c" font-weight="bold" text-anchor="start">NO HEADER / RESERVED</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO25 • audio driver only</text>
+</g>
+<rect x="1048" y="573" width="44" height="44" rx="7" fill="#fff1f2" stroke="#b91c1c" stroke-width="2" stroke-dasharray="5 3"/>
+<text x="1070" y="602" text-anchor="middle" font-size="22" font-weight="bold" fill="#b91c1c">21</text>
+<path d="M1070 619 V642" fill="none" stroke="#b91c1c" stroke-width="2"/>
+<g transform="translate(1070,658) rotate(60)">
+<text x="0" y="0" font-size="23" fill="#b91c1c" font-weight="bold" text-anchor="start">NO HEADER</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO9 • do not connect</text>
+</g>
+<circle cx="1170" cy="520" r="22" fill="#334155"/>
+<text x="1170" y="527" text-anchor="middle" font-size="22" font-weight="bold" fill="white">20</text>
+<path d="M1170 496 V464" fill="none" stroke="#334155" stroke-width="2"/>
+<g transform="translate(1170,450) rotate(-60)">
+<text x="0" y="0" font-size="23" fill="#334155" font-weight="bold" text-anchor="start">Ground</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GND</text>
+</g>
+<circle cx="1170" cy="595" r="22" fill="#64748b"/>
+<text x="1170" y="602" text-anchor="middle" font-size="22" font-weight="bold" fill="white">19</text>
+<path d="M1170 619 V642" fill="none" stroke="#64748b" stroke-width="2"/>
+<g transform="translate(1170,658) rotate(60)">
+<text x="0" y="0" font-size="23" fill="#64748b" font-weight="bold" text-anchor="start">Unused</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO10</text>
+</g>
+<circle cx="1270" cy="520" r="22" fill="#be185d"/>
+<text x="1270" y="527" text-anchor="middle" font-size="22" font-weight="bold" fill="white">18</text>
+<path d="M1270 496 V464" fill="none" stroke="#be185d" stroke-width="2"/>
+<g transform="translate(1270,450) rotate(-60)">
+<text x="0" y="0" font-size="23" fill="#be185d" font-weight="bold" text-anchor="start">Green forehead LED</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO24 • green</text>
+</g>
+<circle cx="1270" cy="595" r="22" fill="#b42318"/>
+<text x="1270" y="602" text-anchor="middle" font-size="22" font-weight="bold" fill="white">17</text>
+<path d="M1270 619 V642" fill="none" stroke="#b42318" stroke-width="2"/>
+<g transform="translate(1270,658) rotate(60)">
+<text x="0" y="0" font-size="23" fill="#b42318" font-weight="bold" text-anchor="start">3.3 V</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">Power rail</text>
+</g>
+<circle cx="1370" cy="520" r="22" fill="#64748b"/>
+<text x="1370" y="527" text-anchor="middle" font-size="22" font-weight="bold" fill="white">16</text>
+<path d="M1370 496 V464" fill="none" stroke="#64748b" stroke-width="2"/>
+<g transform="translate(1370,450) rotate(-60)">
+<text x="0" y="0" font-size="23" fill="#64748b" font-weight="bold" text-anchor="start">Unused</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO23</text>
+</g>
+<circle cx="1370" cy="595" r="22" fill="#a34700"/>
+<text x="1370" y="602" text-anchor="middle" font-size="22" font-weight="bold" fill="white">15</text>
+<path d="M1370 619 V642" fill="none" stroke="#a34700" stroke-width="2"/>
+<g transform="translate(1370,658) rotate(60)">
+<text x="0" y="0" font-size="23" fill="#a34700" font-weight="bold" text-anchor="start">Motor speed PWM</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO22 • TB6612 PWMA</text>
+</g>
+<circle cx="1470" cy="520" r="22" fill="#334155"/>
+<text x="1470" y="527" text-anchor="middle" font-size="22" font-weight="bold" fill="white">14</text>
+<path d="M1470 496 V464" fill="none" stroke="#334155" stroke-width="2"/>
+<g transform="translate(1470,450) rotate(-60)">
+<text x="0" y="0" font-size="23" fill="#334155" font-weight="bold" text-anchor="start">Ground</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GND</text>
+</g>
+<circle cx="1470" cy="595" r="22" fill="#a34700"/>
+<text x="1470" y="602" text-anchor="middle" font-size="22" font-weight="bold" fill="white">13</text>
+<path d="M1470 619 V642" fill="none" stroke="#a34700" stroke-width="2"/>
+<g transform="translate(1470,658) rotate(60)">
+<text x="0" y="0" font-size="23" fill="#a34700" font-weight="bold" text-anchor="start">Motor direction AIN1</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO27 • TB6612 AIN1</text>
+</g>
+<circle cx="1570" cy="520" r="22" fill="#0369a1"/>
+<text x="1570" y="527" text-anchor="middle" font-size="22" font-weight="bold" fill="white">12</text>
+<path d="M1570 496 V464" fill="none" stroke="#0369a1" stroke-width="2"/>
+<g transform="translate(1570,450) rotate(-60)">
+<text x="0" y="0" font-size="23" fill="#0369a1" font-weight="bold" text-anchor="start">Audio bit clock</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO18 • amp + mic BCLK</text>
+</g>
+<circle cx="1570" cy="595" r="22" fill="#a34700"/>
+<text x="1570" y="602" text-anchor="middle" font-size="22" font-weight="bold" fill="white">11</text>
+<path d="M1570 619 V642" fill="none" stroke="#a34700" stroke-width="2"/>
+<g transform="translate(1570,658) rotate(60)">
+<text x="0" y="0" font-size="23" fill="#a34700" font-weight="bold" text-anchor="start">Motor direction AIN2</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO17 • TB6612 AIN2</text>
+</g>
+<circle cx="1670" cy="520" r="22" fill="#047857"/>
+<text x="1670" y="527" text-anchor="middle" font-size="22" font-weight="bold" fill="white">10</text>
+<path d="M1670 496 V464" fill="none" stroke="#047857" stroke-width="2"/>
+<g transform="translate(1670,450) rotate(-60)">
+<text x="0" y="0" font-size="23" fill="#047857" font-weight="bold" text-anchor="start">Mouth switch</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO15 • mouth</text>
+</g>
+<circle cx="1670" cy="595" r="22" fill="#334155"/>
+<text x="1670" y="602" text-anchor="middle" font-size="22" font-weight="bold" fill="white">9</text>
+<path d="M1670 619 V642" fill="none" stroke="#334155" stroke-width="2"/>
+<g transform="translate(1670,658) rotate(60)">
+<text x="0" y="0" font-size="23" fill="#334155" font-weight="bold" text-anchor="start">Ground</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GND</text>
+</g>
+<circle cx="1770" cy="520" r="22" fill="#be185d"/>
+<text x="1770" y="527" text-anchor="middle" font-size="22" font-weight="bold" fill="white">8</text>
+<path d="M1770 496 V464" fill="none" stroke="#be185d" stroke-width="2"/>
+<g transform="translate(1770,450) rotate(-60)">
+<text x="0" y="0" font-size="23" fill="#be185d" font-weight="bold" text-anchor="start">Red forehead LED</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO14 • red</text>
+</g>
+<circle cx="1770" cy="595" r="22" fill="#a34700"/>
+<text x="1770" y="602" text-anchor="middle" font-size="22" font-weight="bold" fill="white">7</text>
+<path d="M1770 619 V642" fill="none" stroke="#a34700" stroke-width="2"/>
+<g transform="translate(1770,658) rotate(60)">
+<text x="0" y="0" font-size="23" fill="#a34700" font-weight="bold" text-anchor="start">Motor standby</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO4 • TB6612 STBY</text>
+</g>
+<circle cx="1870" cy="520" r="22" fill="#334155"/>
+<text x="1870" y="527" text-anchor="middle" font-size="22" font-weight="bold" fill="white">6</text>
+<path d="M1870 496 V464" fill="none" stroke="#334155" stroke-width="2"/>
+<g transform="translate(1870,450) rotate(-60)">
+<text x="0" y="0" font-size="23" fill="#334155" font-weight="bold" text-anchor="start">Ground</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GND</text>
+</g>
+<circle cx="1870" cy="595" r="22" fill="#6d28d9"/>
+<text x="1870" y="602" text-anchor="middle" font-size="22" font-weight="bold" fill="white">5</text>
+<path d="M1870 619 V642" fill="none" stroke="#6d28d9" stroke-width="2"/>
+<g transform="translate(1870,658) rotate(60)">
+<text x="0" y="0" font-size="23" fill="#6d28d9" font-weight="bold" text-anchor="start">Gyro SCL</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO3 • MPU6050 SCL</text>
+</g>
+<circle cx="1970" cy="520" r="22" fill="#b42318"/>
+<text x="1970" y="527" text-anchor="middle" font-size="22" font-weight="bold" fill="white">4</text>
+<path d="M1970 496 V464" fill="none" stroke="#b42318" stroke-width="2"/>
+<g transform="translate(1970,450) rotate(-60)">
+<text x="0" y="0" font-size="23" fill="#b42318" font-weight="bold" text-anchor="start">5 V</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">Power rail</text>
+</g>
+<circle cx="1970" cy="595" r="22" fill="#6d28d9"/>
+<text x="1970" y="602" text-anchor="middle" font-size="22" font-weight="bold" fill="white">3</text>
+<path d="M1970 619 V642" fill="none" stroke="#6d28d9" stroke-width="2"/>
+<g transform="translate(1970,658) rotate(60)">
+<text x="0" y="0" font-size="23" fill="#6d28d9" font-weight="bold" text-anchor="start">Gyro SDA</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">GPIO2 • MPU6050 SDA</text>
+</g>
+<circle cx="2070" cy="520" r="22" fill="#b42318"/>
+<text x="2070" y="527" text-anchor="middle" font-size="22" font-weight="bold" fill="white">2</text>
+<path d="M2070 496 V464" fill="none" stroke="#b42318" stroke-width="2"/>
+<g transform="translate(2070,450) rotate(-60)">
+<text x="0" y="0" font-size="23" fill="#b42318" font-weight="bold" text-anchor="start">5 V</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">Power rail</text>
+</g>
+<rect x="2048" y="573" width="44" height="44" rx="4" fill="#b42318"/>
+<text x="2070" y="602" text-anchor="middle" font-size="22" font-weight="bold" fill="white">1</text>
+<path d="M2070 619 V642" fill="none" stroke="#b42318" stroke-width="2"/>
+<g transform="translate(2070,658) rotate(60)">
+<text x="0" y="0" font-size="23" fill="#b42318" font-weight="bold" text-anchor="start">3.3 V</text>
+<text x="0" y="24" font-size="18" fill="#475569" font-weight="normal" text-anchor="start">Power rail</text>
+</g>
+<text x="2195" y="568" font-size="18" fill="#64748b" font-weight="bold" text-anchor="middle">EDGE</text>
+<text x="2195" y="635" font-size="18" fill="#64748b" font-weight="bold" text-anchor="middle">PCB</text>
+<text x="2195" y="661" font-size="18" fill="#64748b" font-weight="bold" text-anchor="middle">SIDE</text>
+<text x="1190" y="1022" font-size="23" fill="#52725c" font-weight="normal" text-anchor="middle">BOTTOM FACE OF PCB • schematic only, not to scale</text>
+<circle cx="110" cy="1104" r="8" fill="#6d28d9"/>
+<text x="128" y="1112" font-size="23" fill="#475569" font-weight="normal" text-anchor="start">Gyro / I²C</text>
+<circle cx="470" cy="1104" r="8" fill="#a34700"/>
+<text x="488" y="1112" font-size="23" fill="#475569" font-weight="normal" text-anchor="start">Motor control</text>
+<circle cx="830" cy="1104" r="8" fill="#047857"/>
+<text x="848" y="1112" font-size="23" fill="#475569" font-weight="normal" text-anchor="start">Switches</text>
+<circle cx="1190" cy="1104" r="8" fill="#be185d"/>
+<text x="1208" y="1112" font-size="23" fill="#475569" font-weight="normal" text-anchor="start">LEDs</text>
+<circle cx="1550" cy="1104" r="8" fill="#0369a1"/>
+<text x="1568" y="1112" font-size="23" fill="#475569" font-weight="normal" text-anchor="start">I²S audio</text>
+<circle cx="1910" cy="1104" r="8" fill="#b91c1c"/>
+<text x="1928" y="1112" font-size="23" fill="#475569" font-weight="normal" text-anchor="start">No header</text>
+<rect x="70" y="1140" width="2260" height="100" rx="15" fill="white" stroke="#cbd5e1"/>
+<text x="95" y="1178" font-size="25" fill="#0f172a" font-weight="bold" text-anchor="start">Numbers in circles/boxes = physical header pins. GPIO labels = BCM numbers. Pin 1 is the square at the lower right.</text>
+<text x="95" y="1214" font-size="23" fill="#475569" font-weight="normal" text-anchor="start">The four dashed positions have no header: GPIO8, GPIO9, GPIO11 and GPIO25. No wire is needed at reserved GPIO25. Power OFF before rewiring.</text>
+</svg>

@@ -1,0 +1,226 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1530" viewBox="0 0 1200 1530">
+<rect width="1200" height="1530" fill="#f8fafc"/>
+<style>text{font-family:Arial,Helvetica,sans-serif} .title{font-size:38px;font-weight:700;fill:#0f172a}.sub{font-size:20px;fill:#475569}.label{font-size:21px;font-weight:700}.detail{font-size:16px;fill:#64748b}.num{font-size:20px;font-weight:700;fill:white;text-anchor:middle;dominant-baseline:middle}</style>
+<text x="50" y="66" class="title" text-anchor="start">FURBY • GPIO WIRING MAP</text>
+<text x="50" y="104" class="sub" text-anchor="start">Pi Zero W • matches the migrated PyFurby defaults</text>
+<rect x="50" y="130" width="1100" height="92" rx="14" fill="#e0f2fe"/>
+<text x="72" y="165" class="label" text-anchor="start" fill="#075985">COMPONENT-SIDE REFERENCE VIEW</text>
+<text x="72" y="198" class="sub" text-anchor="start">Pin-1 end is at the TOP. Do not use this view from the underside.</text>
+<text x="600" y="253" class="sub" text-anchor="middle">PHYSICAL PIN NUMBERS</text>
+<rect x="516" y="275" width="168" height="993" rx="26" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+<line x1="529" y1="310" x2="513" y2="310" stroke="#b42318" stroke-width="2"/>
+<rect x="529" y="289" width="42" height="42" rx="5" fill="#b42318"/>
+<text x="550" y="311" class="num">1</text>
+<text x="505" y="307" class="label" text-anchor="end" fill="#b42318">3.3 V</text>
+<text x="505" y="328" class="detail" text-anchor="end">Power rail</text>
+<line x1="671" y1="310" x2="687" y2="310" stroke="#b42318" stroke-width="2"/>
+<circle cx="650" cy="310" r="21" fill="#b42318"/>
+<text x="650" y="311" class="num">2</text>
+<text x="695" y="307" class="label" text-anchor="start" fill="#b42318">5 V</text>
+<text x="695" y="328" class="detail" text-anchor="start">Power rail</text>
+<line x1="529" y1="358" x2="513" y2="358" stroke="#6d28d9" stroke-width="2"/>
+<circle cx="550" cy="358" r="21" fill="#6d28d9"/>
+<text x="550" y="359" class="num">3</text>
+<text x="505" y="355" class="label" text-anchor="end" fill="#6d28d9">Gyro SDA</text>
+<text x="505" y="376" class="detail" text-anchor="end">GPIO2 • MPU6050 SDA</text>
+<line x1="671" y1="358" x2="687" y2="358" stroke="#b42318" stroke-width="2"/>
+<circle cx="650" cy="358" r="21" fill="#b42318"/>
+<text x="650" y="359" class="num">4</text>
+<text x="695" y="355" class="label" text-anchor="start" fill="#b42318">5 V</text>
+<text x="695" y="376" class="detail" text-anchor="start">Power rail</text>
+<line x1="529" y1="406" x2="513" y2="406" stroke="#6d28d9" stroke-width="2"/>
+<circle cx="550" cy="406" r="21" fill="#6d28d9"/>
+<text x="550" y="407" class="num">5</text>
+<text x="505" y="403" class="label" text-anchor="end" fill="#6d28d9">Gyro SCL</text>
+<text x="505" y="424" class="detail" text-anchor="end">GPIO3 • MPU6050 SCL</text>
+<line x1="671" y1="406" x2="687" y2="406" stroke="#334155" stroke-width="2"/>
+<circle cx="650" cy="406" r="21" fill="#334155"/>
+<text x="650" y="407" class="num">6</text>
+<text x="695" y="403" class="label" text-anchor="start" fill="#334155">Ground</text>
+<text x="695" y="424" class="detail" text-anchor="start">GND</text>
+<line x1="529" y1="454" x2="513" y2="454" stroke="#a34700" stroke-width="2"/>
+<circle cx="550" cy="454" r="21" fill="#a34700"/>
+<text x="550" y="455" class="num">7</text>
+<text x="505" y="451" class="label" text-anchor="end" fill="#a34700">Motor standby</text>
+<text x="505" y="472" class="detail" text-anchor="end">GPIO4 • TB6612 STBY</text>
+<line x1="671" y1="454" x2="687" y2="454" stroke="#be185d" stroke-width="2"/>
+<circle cx="650" cy="454" r="21" fill="#be185d"/>
+<text x="650" y="455" class="num">8</text>
+<text x="695" y="451" class="label" text-anchor="start" fill="#be185d">Red forehead LED</text>
+<text x="695" y="472" class="detail" text-anchor="start">GPIO14 • red</text>
+<line x1="529" y1="502" x2="513" y2="502" stroke="#334155" stroke-width="2"/>
+<circle cx="550" cy="502" r="21" fill="#334155"/>
+<text x="550" y="503" class="num">9</text>
+<text x="505" y="499" class="label" text-anchor="end" fill="#334155">Ground</text>
+<text x="505" y="520" class="detail" text-anchor="end">GND</text>
+<line x1="671" y1="502" x2="687" y2="502" stroke="#047857" stroke-width="2"/>
+<circle cx="650" cy="502" r="21" fill="#047857"/>
+<text x="650" y="503" class="num">10</text>
+<text x="695" y="499" class="label" text-anchor="start" fill="#047857">Mouth switch</text>
+<text x="695" y="520" class="detail" text-anchor="start">GPIO15 • mouth</text>
+<line x1="529" y1="550" x2="513" y2="550" stroke="#a34700" stroke-width="2"/>
+<circle cx="550" cy="550" r="21" fill="#a34700"/>
+<text x="550" y="551" class="num">11</text>
+<text x="505" y="547" class="label" text-anchor="end" fill="#a34700">Motor direction AIN2</text>
+<text x="505" y="568" class="detail" text-anchor="end">GPIO17 • TB6612 AIN2</text>
+<line x1="671" y1="550" x2="687" y2="550" stroke="#0369a1" stroke-width="2"/>
+<circle cx="650" cy="550" r="21" fill="#0369a1"/>
+<text x="650" y="551" class="num">12</text>
+<text x="695" y="547" class="label" text-anchor="start" fill="#0369a1">Audio bit clock</text>
+<text x="695" y="568" class="detail" text-anchor="start">GPIO18 • amp + mic BCLK</text>
+<line x1="529" y1="598" x2="513" y2="598" stroke="#a34700" stroke-width="2"/>
+<circle cx="550" cy="598" r="21" fill="#a34700"/>
+<text x="550" y="599" class="num">13</text>
+<text x="505" y="595" class="label" text-anchor="end" fill="#a34700">Motor direction AIN1</text>
+<text x="505" y="616" class="detail" text-anchor="end">GPIO27 • TB6612 AIN1</text>
+<line x1="671" y1="598" x2="687" y2="598" stroke="#334155" stroke-width="2"/>
+<circle cx="650" cy="598" r="21" fill="#334155"/>
+<text x="650" y="599" class="num">14</text>
+<text x="695" y="595" class="label" text-anchor="start" fill="#334155">Ground</text>
+<text x="695" y="616" class="detail" text-anchor="start">GND</text>
+<line x1="529" y1="646" x2="513" y2="646" stroke="#a34700" stroke-width="2"/>
+<circle cx="550" cy="646" r="21" fill="#a34700"/>
+<text x="550" y="647" class="num">15</text>
+<text x="505" y="643" class="label" text-anchor="end" fill="#a34700">Motor speed PWM</text>
+<text x="505" y="664" class="detail" text-anchor="end">GPIO22 • TB6612 PWMA</text>
+<line x1="671" y1="646" x2="687" y2="646" stroke="#64748b" stroke-width="2"/>
+<circle cx="650" cy="646" r="21" fill="#64748b"/>
+<text x="650" y="647" class="num">16</text>
+<text x="695" y="643" class="label" text-anchor="start" fill="#64748b">Unused</text>
+<text x="695" y="664" class="detail" text-anchor="start">GPIO23</text>
+<line x1="529" y1="694" x2="513" y2="694" stroke="#b42318" stroke-width="2"/>
+<circle cx="550" cy="694" r="21" fill="#b42318"/>
+<text x="550" y="695" class="num">17</text>
+<text x="505" y="691" class="label" text-anchor="end" fill="#b42318">3.3 V</text>
+<text x="505" y="712" class="detail" text-anchor="end">Power rail</text>
+<line x1="671" y1="694" x2="687" y2="694" stroke="#be185d" stroke-width="2"/>
+<circle cx="650" cy="694" r="21" fill="#be185d"/>
+<text x="650" y="695" class="num">18</text>
+<text x="695" y="691" class="label" text-anchor="start" fill="#be185d">Green forehead LED</text>
+<text x="695" y="712" class="detail" text-anchor="start">GPIO24 • green</text>
+<line x1="529" y1="742" x2="513" y2="742" stroke="#64748b" stroke-width="2"/>
+<circle cx="550" cy="742" r="21" fill="#64748b"/>
+<text x="550" y="743" class="num">19</text>
+<text x="505" y="739" class="label" text-anchor="end" fill="#64748b">Unused</text>
+<text x="505" y="760" class="detail" text-anchor="end">GPIO10</text>
+<line x1="671" y1="742" x2="687" y2="742" stroke="#334155" stroke-width="2"/>
+<circle cx="650" cy="742" r="21" fill="#334155"/>
+<text x="650" y="743" class="num">20</text>
+<text x="695" y="739" class="label" text-anchor="start" fill="#334155">Ground</text>
+<text x="695" y="760" class="detail" text-anchor="start">GND</text>
+<line x1="529" y1="790" x2="513" y2="790" stroke="#b91c1c" stroke-width="2"/>
+<rect x="528" y="768" width="44" height="44" rx="8" fill="#fff1f2" stroke="#b91c1c" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="550" y="791" text-anchor="middle" dominant-baseline="middle" font-size="20" font-weight="700" fill="#b91c1c">21</text>
+<text x="505" y="787" class="label" text-anchor="end" fill="#b91c1c">NO HEADER</text>
+<text x="505" y="808" class="detail" text-anchor="end">GPIO9 • do not connect</text>
+<line x1="671" y1="790" x2="687" y2="790" stroke="#b91c1c" stroke-width="2"/>
+<rect x="628" y="768" width="44" height="44" rx="8" fill="#fff1f2" stroke="#b91c1c" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="650" y="791" text-anchor="middle" dominant-baseline="middle" font-size="20" font-weight="700" fill="#b91c1c">22</text>
+<text x="695" y="787" class="label" text-anchor="start" fill="#b91c1c">NO HEADER / RESERVED</text>
+<text x="695" y="808" class="detail" text-anchor="start">GPIO25 • audio driver only</text>
+<line x1="529" y1="838" x2="513" y2="838" stroke="#b91c1c" stroke-width="2"/>
+<rect x="528" y="816" width="44" height="44" rx="8" fill="#fff1f2" stroke="#b91c1c" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="550" y="839" text-anchor="middle" dominant-baseline="middle" font-size="20" font-weight="700" fill="#b91c1c">23</text>
+<text x="505" y="835" class="label" text-anchor="end" fill="#b91c1c">NO HEADER</text>
+<text x="505" y="856" class="detail" text-anchor="end">GPIO11 • do not connect</text>
+<line x1="671" y1="838" x2="687" y2="838" stroke="#b91c1c" stroke-width="2"/>
+<rect x="628" y="816" width="44" height="44" rx="8" fill="#fff1f2" stroke="#b91c1c" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="650" y="839" text-anchor="middle" dominant-baseline="middle" font-size="20" font-weight="700" fill="#b91c1c">24</text>
+<text x="695" y="835" class="label" text-anchor="start" fill="#b91c1c">NO HEADER</text>
+<text x="695" y="856" class="detail" text-anchor="start">GPIO8 • do not connect</text>
+<line x1="529" y1="886" x2="513" y2="886" stroke="#334155" stroke-width="2"/>
+<circle cx="550" cy="886" r="21" fill="#334155"/>
+<text x="550" y="887" class="num">25</text>
+<text x="505" y="883" class="label" text-anchor="end" fill="#334155">Ground</text>
+<text x="505" y="904" class="detail" text-anchor="end">GND</text>
+<line x1="671" y1="886" x2="687" y2="886" stroke="#64748b" stroke-width="2"/>
+<circle cx="650" cy="886" r="21" fill="#64748b"/>
+<text x="650" y="887" class="num">26</text>
+<text x="695" y="883" class="label" text-anchor="start" fill="#64748b">Unused</text>
+<text x="695" y="904" class="detail" text-anchor="start">GPIO7</text>
+<line x1="529" y1="934" x2="513" y2="934" stroke="#64748b" stroke-width="2"/>
+<circle cx="550" cy="934" r="21" fill="#64748b"/>
+<text x="550" y="935" class="num">27</text>
+<text x="505" y="931" class="label" text-anchor="end" fill="#64748b">Leave unused</text>
+<text x="505" y="952" class="detail" text-anchor="end">GPIO0 • ID_SD / HAT EEPROM</text>
+<line x1="671" y1="934" x2="687" y2="934" stroke="#64748b" stroke-width="2"/>
+<circle cx="650" cy="934" r="21" fill="#64748b"/>
+<text x="650" y="935" class="num">28</text>
+<text x="695" y="931" class="label" text-anchor="start" fill="#64748b">Leave unused</text>
+<text x="695" y="952" class="detail" text-anchor="start">GPIO1 • ID_SC / HAT EEPROM</text>
+<line x1="529" y1="982" x2="513" y2="982" stroke="#64748b" stroke-width="2"/>
+<circle cx="550" cy="982" r="21" fill="#64748b"/>
+<text x="550" y="983" class="num">29</text>
+<text x="505" y="979" class="label" text-anchor="end" fill="#64748b">Unused</text>
+<text x="505" y="1000" class="detail" text-anchor="end">GPIO5</text>
+<line x1="671" y1="982" x2="687" y2="982" stroke="#334155" stroke-width="2"/>
+<circle cx="650" cy="982" r="21" fill="#334155"/>
+<text x="650" y="983" class="num">30</text>
+<text x="695" y="979" class="label" text-anchor="start" fill="#334155">Ground</text>
+<text x="695" y="1000" class="detail" text-anchor="start">GND</text>
+<line x1="529" y1="1030" x2="513" y2="1030" stroke="#64748b" stroke-width="2"/>
+<circle cx="550" cy="1030" r="21" fill="#64748b"/>
+<text x="550" y="1031" class="num">31</text>
+<text x="505" y="1027" class="label" text-anchor="end" fill="#64748b">Unused</text>
+<text x="505" y="1048" class="detail" text-anchor="end">GPIO6</text>
+<line x1="671" y1="1030" x2="687" y2="1030" stroke="#047857" stroke-width="2"/>
+<circle cx="650" cy="1030" r="21" fill="#047857"/>
+<text x="650" y="1031" class="num">32</text>
+<text x="695" y="1027" class="label" text-anchor="start" fill="#047857">Motor cycle switch</text>
+<text x="695" y="1048" class="detail" text-anchor="start">GPIO12 • cycle input</text>
+<line x1="529" y1="1078" x2="513" y2="1078" stroke="#64748b" stroke-width="2"/>
+<circle cx="550" cy="1078" r="21" fill="#64748b"/>
+<text x="550" y="1079" class="num">33</text>
+<text x="505" y="1075" class="label" text-anchor="end" fill="#64748b">Unused</text>
+<text x="505" y="1096" class="detail" text-anchor="end">GPIO13</text>
+<line x1="671" y1="1078" x2="687" y2="1078" stroke="#334155" stroke-width="2"/>
+<circle cx="650" cy="1078" r="21" fill="#334155"/>
+<text x="650" y="1079" class="num">34</text>
+<text x="695" y="1075" class="label" text-anchor="start" fill="#334155">Ground</text>
+<text x="695" y="1096" class="detail" text-anchor="start">GND</text>
+<line x1="529" y1="1126" x2="513" y2="1126" stroke="#0369a1" stroke-width="2"/>
+<circle cx="550" cy="1126" r="21" fill="#0369a1"/>
+<text x="550" y="1127" class="num">35</text>
+<text x="505" y="1123" class="label" text-anchor="end" fill="#0369a1">Audio word clock</text>
+<text x="505" y="1144" class="detail" text-anchor="end">GPIO19 • amp + mic LRCLK / WS</text>
+<line x1="671" y1="1126" x2="687" y2="1126" stroke="#047857" stroke-width="2"/>
+<circle cx="650" cy="1126" r="21" fill="#047857"/>
+<text x="650" y="1127" class="num">36</text>
+<text x="695" y="1123" class="label" text-anchor="start" fill="#047857">Chest switch</text>
+<text x="695" y="1144" class="detail" text-anchor="start">GPIO16 • chest</text>
+<line x1="529" y1="1174" x2="513" y2="1174" stroke="#047857" stroke-width="2"/>
+<circle cx="550" cy="1174" r="21" fill="#047857"/>
+<text x="550" y="1175" class="num">37</text>
+<text x="505" y="1171" class="label" text-anchor="end" fill="#047857">Back switch</text>
+<text x="505" y="1192" class="detail" text-anchor="end">GPIO26 • back</text>
+<line x1="671" y1="1174" x2="687" y2="1174" stroke="#0369a1" stroke-width="2"/>
+<circle cx="650" cy="1174" r="21" fill="#0369a1"/>
+<text x="650" y="1175" class="num">38</text>
+<text x="695" y="1171" class="label" text-anchor="start" fill="#0369a1">Microphone data → Pi</text>
+<text x="695" y="1192" class="detail" text-anchor="start">GPIO20 • from SPH0645 DOUT</text>
+<line x1="529" y1="1222" x2="513" y2="1222" stroke="#334155" stroke-width="2"/>
+<circle cx="550" cy="1222" r="21" fill="#334155"/>
+<text x="550" y="1223" class="num">39</text>
+<text x="505" y="1219" class="label" text-anchor="end" fill="#334155">Ground</text>
+<text x="505" y="1240" class="detail" text-anchor="end">GND</text>
+<line x1="671" y1="1222" x2="687" y2="1222" stroke="#0369a1" stroke-width="2"/>
+<circle cx="650" cy="1222" r="21" fill="#0369a1"/>
+<text x="650" y="1223" class="num">40</text>
+<text x="695" y="1219" class="label" text-anchor="start" fill="#0369a1">Pi → amplifier data</text>
+<text x="695" y="1240" class="detail" text-anchor="start">GPIO21 • to MAX98357A DIN</text>
+<text x="600" y="1305" class="sub" text-anchor="middle">GPIO numbers are BCM. The numbered shapes are physical header pins.</text>
+<circle cx="65" cy="1346" r="7" fill="#6d28d9"/>
+<text x="81" y="1353" class="detail" text-anchor="start">Gyro / I²C</text>
+<circle cx="290" cy="1346" r="7" fill="#a34700"/>
+<text x="306" y="1353" class="detail" text-anchor="start">Motor control</text>
+<circle cx="515" cy="1346" r="7" fill="#047857"/>
+<text x="531" y="1353" class="detail" text-anchor="start">Switches</text>
+<circle cx="740" cy="1346" r="7" fill="#be185d"/>
+<text x="756" y="1353" class="detail" text-anchor="start">Forehead LEDs</text>
+<circle cx="965" cy="1346" r="7" fill="#0369a1"/>
+<text x="981" y="1353" class="detail" text-anchor="start">I²S audio</text>
+<rect x="50" y="1380" width="1100" height="112" rx="14" fill="white" stroke="#cbd5e1"/>
+<text x="72" y="1410" class="label" text-anchor="start" fill="#0f172a">HARWIN M20: keep the same electrical pin assignments.</text>
+<text x="72" y="1439" class="detail" text-anchor="start">No contacts or wires at GPIO8, GPIO9, GPIO11 or GPIO25. GPIO25 is reserved in software.</text>
+<text x="72" y="1467" class="detail" text-anchor="start">Power OFF to rewire. All GPIO signals are 3.3 V logic; 5 V labels identify power rails only.</text>
+</svg>

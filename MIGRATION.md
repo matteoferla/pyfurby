@@ -24,6 +24,21 @@ Then open `http://127.0.0.1:8888` and use the token stored privately in `~/.conf
 
 ## Wiring assignments
 
+### Visual wiring maps
+
+Use the underside view matching the inverted header on this Furby: **header across the top, microSD socket on the right, physical pin 1 at the lower-right**. Numbers inside circles or boxes are physical pins; GPIO labels are BCM numbers. Dashed positions mark the four missing headers (GPIO8, GPIO9, GPIO11 and GPIO25).
+
+![Furby GPIO map from below, matching the board orientation](images/wiring/furby-gpio-underside-photo-orientation.png)
+
+[Scalable underside SVG](images/wiring/furby-gpio-underside-photo-orientation.svg).
+
+Additional orientations, with the pin-1 end at the top:
+
+- [Component-side reference PNG](images/wiring/furby-gpio-reference.png) · [SVG](images/wiring/furby-gpio-reference.svg)
+- [Underside portrait PNG](images/wiring/furby-gpio-underside.png) · [SVG](images/wiring/furby-gpio-underside.svg)
+
+### Pin assignments
+
 BCM numbers below match the application defaults. Physical numbers are the standard top-view 40-pin header numbering; this project's board has inverted headers, so use the board orientation carefully. Power down before changing wiring.
 
 | Function | BCM GPIO | Physical pin |
