@@ -1,0 +1,52 @@
+// Derived from raspberrypi/linux rpi-6.18.y googlevoicehat-soundcard-overlay.dts
+// Furby uses GPIO16 for its chest button; reserve unused GPIO25 for codec SDMODE.
+// The amplifier SD/MODE is not connected to GPIO25. No amplifier switching required.
+/dts-v1/;
+/plugin/;
+
+/ {
+	compatible = "brcm,bcm2835";
+
+	fragment@0 {
+		target = <&i2s_clk_producer>;
+		__overlay__ {
+			status = "okay";
+		};
+	};
+
+	fragment@1 {
+		target = <&gpio>;
+		__overlay__ {
+			googlevoicehat_pins: googlevoicehat_pins {
+				brcm,pins = <25>;
+				brcm,function = <1>; /* out */
+				brcm,pull = <0>; /* up */
+			};
+		};
+	};
+
+
+	fragment@2 {
+		target-path = "/";
+		__overlay__ {
+			voicehat-codec {
+				#sound-dai-cells = <0>;
+				compatible = "google,voicehat";
+				pinctrl-names = "default";
+				pinctrl-0 = <&googlevoicehat_pins>;
+				sdmode-gpios= <&gpio 25 0>;
+                voicehat_sdmode_delay = <0>;
+				status = "okay";
+			};
+		};
+	};
+
+	fragment@3 {
+		target = <&sound>;
+		__overlay__ {
+			compatible = "googlevoicehat,googlevoicehat-soundcard";
+			i2s-controller = <&i2s_clk_producer>;
+			status = "okay";
+		};
+	};
+};

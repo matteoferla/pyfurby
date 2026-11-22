@@ -143,11 +143,13 @@ class Furby(FurbyMotor,
         """
         if move:
             self.move_clockwise()
-            for phrase in text.replace(',','.').split('.'):
-                super().say(phrase)
-                self.inverse()
-                time.sleep(0.1)
-            self.halt()
+            try:
+                for phrase in text.replace(',','.').split('.'):
+                    super().say(phrase)
+                    self.inverse()
+                    time.sleep(0.1)
+            finally:
+                self.halt()
         else:
             super().say(text)
 

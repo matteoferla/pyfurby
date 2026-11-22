@@ -30,7 +30,7 @@ class RemoteFurby:
 
     @property
     def url(self):
-        return f'{self.url}:{self.port}'
+        return f'http://{self.ip}:{self.port}'
 
     def __getattr__(self, cmd):
         def command(**params):

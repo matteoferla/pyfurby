@@ -10,7 +10,12 @@ if platform.uname().machine != 'armv6l':
 
 requires = [
     'Flask',
-    'Adafruit-Blinka', # circuitpython: 'board', 'digitalio', 'pulseio'
+    'waitress',
+    'requests',
+    'gpiod>=2.2.2,<3',
+    'Adafruit-Blinka-Raspberry-Pi-PWM>=1.0.2',
+    'pyserial',
+    'Adafruit-Blinka>=10.2.0', # CircuitPython GPIO and pwmio compatibility
     'mpu6050-raspberrypi', #gyro
     'pyttsx3',
     #'smbus'
@@ -22,7 +27,7 @@ long_description = open(os.path.join(here, 'README.md')).read()
 
 setup(
     name='pyfurby',
-    version='0.1',
+    version='0.2.0',
     packages=find_packages(),
     url='https://github.com/matteoferla/pyfurby',
     license='MIT',
@@ -30,5 +35,6 @@ setup(
     author_email='matteo.ferla@gmail.com',
     description='Controlling the various parts of the Furby with Python and a Pi Zero',
     long_description=long_description,
+    extras_require={"notebooks": ["jupyterlab", "ipykernel", "SpeechRecognition"]},
     install_requires=requires
 )

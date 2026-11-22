@@ -66,6 +66,8 @@ So I really struggled to pack a Pi Zero between the body and the battery unit.
 
 ### Header pins
 
+The [current wiring maps and pin assignments](MIGRATION.md#visual-wiring-maps) cover the restored I2S setup, including an underside diagram matching the inverted header and its four missing positions.
+
 Regular header pins fit but not with wires on them, also there's a protuberance in the motor assembly.
 I failed to solder wires on a Pi without them coming off etc. because I had solid core 22 gauge.
 Maybe <22 gauge or higher threaded wires would have worked.

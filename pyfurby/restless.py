@@ -1,5 +1,6 @@
 from typing import get_type_hints
 import pydoc
+import inspect
 
 
 class RestlessFurby: # restful...
@@ -14,9 +15,25 @@ class RestlessFurby: # restful...
         """
         try:
             from flask import Flask, request
-            kwargs = request.args
-            print(f'Request {cmd}: {kwargs} from {request.remote_addr}')
-            getattr(self, cmd)(**kwargs)
+            if cmd.startswith('_') or not callable(inspect.getattr_static(self, cmd)):
+                raise ValueError("Only public methods can be called")
+            action = getattr(self, cmd)
+            parameters = inspect.signature(action).parameters
+            hints = get_type_hints(action)
+            kwargs = {}
+            for name, value in request.args.items():
+                parameter = parameters[name]
+                expected = hints.get(name)
+                if expected is None and parameter.default is not inspect.Parameter.empty:
+                    expected = type(parameter.default)
+                if expected is bool:
+                    if value.lower() not in ('true', 'false', '1', '0'):
+                        raise ValueError("Boolean arguments must be true or false")
+                    value = value.lower() in ('true', '1')
+                elif expected in (int, float):
+                    value = expected(value)
+                kwargs[name] = value
+            action(**kwargs)
             return {'status': 'OK'}
         except Exception as error:
             return {'status': 'error',
@@ -34,9 +51,12 @@ class RestlessFurby: # restful...
         reply += 'Namely, the route (part before the question mark) is the command, and its arguments are ' +\
                   'key=value separated by an ampersand (that is a URL query).\n' +\
                   'Using Pythod requests, just submit it as a dictionary\n'
-        for k in [k for k in dir(self) if k.find('_') != 0]:
+        for k in [k for k in dir(self) if not k.startswith('_')]:
+            # Inspect without evaluating properties that read disconnected sensors.
+            if not callable(inspect.getattr_static(self, k)):
+                continue
             attribute = getattr(self, k)
-            reply += f'###{k}\n>{get_type_hints(attribute)}\n{pydoc.getdoc(attribute)}\n\n'
+            reply += f'###{k}\n>{inspect.signature(attribute)}\n{pydoc.getdoc(attribute)}\n\n'
         return reply
 
     def restful(self):

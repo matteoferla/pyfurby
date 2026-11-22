@@ -1,0 +1,13 @@
+[Unit]
+Description=Furby boot greeting
+After=network.target sound.target
+
+[Service]
+Type=simple
+User=matteo
+WorkingDirectory=/home/matteo/apps/pyfurby
+ExecStart=/home/matteo/furby-venv/bin/python -u /home/matteo/apps/pyfurby/welcome.py
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target

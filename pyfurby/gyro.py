@@ -1,4 +1,4 @@
-from mpu6050 import mpu6050
+import warnings
 
 class FurbyGyro:
     """
@@ -9,7 +9,17 @@ class FurbyGyro:
     resting_z = -8.099584216308592
 
     def __init__(self):
-        self.gyro = mpu6050(0x68)
+        self.gyro = None
+        try:
+            from mpu6050 import mpu6050
+            self.gyro = mpu6050(0x68)
+        except (ImportError, OSError) as error:
+            warnings.warn("Gyroscope unavailable; continuing without motion sensing: {}".format(error))
+
+    def _require_gyro(self):
+        if self.gyro is None:
+            raise RuntimeError("Gyroscope is unavailable; check its wiring and Python dependency")
+        return self.gyro
 
     def define_static(self):
         """
@@ -17,7 +27,7 @@ class FurbyGyro:
         The board is not z axis pointing to zenith, but at an angle
         :return:
         """
-        acc = self.gyro.get_accel_data()
+        acc = self._require_gyro().get_accel_data()
         self.resting_x = acc['x']
         self.resting_y = acc['y']
         self.resting_z = acc['z']
@@ -35,7 +45,7 @@ class FurbyGyro:
         :return: how fast is it going? (velocity)
         """
         # technically multiplied by transformation matrix
-        return self.calculate_translation_matrix(self.gyro.get_gyro_data())
+        return self.calculate_translation_matrix(self._require_gyro().get_gyro_data())
 
     @property
     def acceleration(self):
@@ -43,26 +53,26 @@ class FurbyGyro:
         :return: how fast is it speeding up? (acceleration)
         """
         # technically multiplied by transformation matrix
-        return self.calculate_translation_matrix(self.gyro.get_accel_data())
+        return self.calculate_translation_matrix(self._require_gyro().get_accel_data())
 
     @property
     def temperature(self):
         """
         :return: temperature in Celcius
         """
-        return self.gyro.get_temp()
+        return self._require_gyro().get_temp()
 
     def is_lifted(self):
         """
         :return: true when lifted
         """
-        return abs(self.speed['z']) > 10
+        return self.gyro is not None and abs(self.speed['z']) > 10
 
     def is_moved(self):
         """
         :return: true when moved
         """
-        return abs(self.speed['x']) > 10 or abs(self.speed['y']) > 10
+        return self.gyro is not None and (abs(self.speed['x']) > 10 or abs(self.speed['y']) > 10)
 
     @property
     def lifted(self):
@@ -82,6 +92,7 @@ class FurbyGyro:
         """
         Idle until moved
         """
+        self._require_gyro()
         while not self.is_lifted() and not self.is_moved():
             pass
 
